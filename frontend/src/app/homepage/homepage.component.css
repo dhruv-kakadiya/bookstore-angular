@@ -1,0 +1,229 @@
+/* Starts: Common Styles */
+img {
+    width: 100%;
+}
+
+.common-section {
+    padding: 1rem 10rem;
+}
+
+.common-section-title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+/* Ends: Common Styles */
+
+
+/* Starts: Find More Category */
+.categories {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.category {
+    flex-basis: 20%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: #FFFFFF;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.category-icon {
+    flex-basis: 50%;
+}
+
+.category-icon img {
+    width: 100%;
+}
+
+.category-title {
+    flex-basis: 40%;
+}
+
+.book-category {
+    background: linear-gradient(to right top, #FDAC7C, #F8CC6B), linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+}
+
+.business-category {
+    background: linear-gradient(to right top, #8994E2, #6CBFF7), linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+}
+
+.romantic-category {
+    background: linear-gradient(to right top, #FF5CCC, #FE82A3), linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+}
+
+.cookbooks-category {
+    background: linear-gradient(to right top, #FF70B6, #ABC9FE), linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+}
+/* Ends: Find More Category */
+
+
+/* Starts: Books For Children */
+.children-books {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.children-books-left {
+    flex-basis: 35%;
+}
+
+.children-books-left-book {
+    position: relative;
+}
+
+.children-books-left-book-image img {
+    border-radius: 0.5rem;
+}
+
+.children-books-left-book-description {
+    position: absolute;
+    bottom: 1rem;
+    color: #FFFFFF;
+    padding: 1rem 2rem;
+}
+
+.children-books-left-book-description-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.children-books-right {
+    flex-basis: 60%;
+}
+
+.children-books-right-books {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: auto auto auto auto;
+}
+
+.children-books-right-book {
+    flex-basis: 30%;
+}
+
+.children-books-right-book-image img {
+    border-radius: 0.5rem;
+}
+
+.fa-star {
+    margin-right: 0.3rem;
+}
+/* Ends: Books For Children */
+
+
+/* Starts: Top Books & Authors */
+.top-books-authors {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+    /* Starts: Top Books */
+.top-books-column {
+    flex-basis: 50%;
+    padding: 4rem 4rem 0rem 10rem;
+}
+
+.top-books-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.top-books {
+    display: grid;
+    row-gap: 2rem;
+    column-gap: 3rem;
+    grid-template-columns: auto auto;
+}
+
+.top-book {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.top-book-image {
+    flex-basis: 40%;
+}
+
+.top-book-image img {
+    border-radius: 0.3rem;
+}
+
+.top-book-description {
+    flex-basis: 50%;
+}
+
+.top-book-description-title {
+    font-weight: bold;
+}
+
+.top-book-description-subtitle {
+    font-size: 12px;
+    color: gray;
+}
+    /* Ends: Top Books */
+
+
+    /* Starts: Top Authors */
+.top-authors-column {
+    flex-basis: 50%;
+    background-color: #FCF3FD;
+    padding: 4rem 10rem 0rem 4rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.top-authors-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.top-author {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-bottom: 3rem;
+}
+
+.top-author-image {
+    flex-basis: 20%;
+}
+
+.top-author-image img {
+    border-radius: 0.3rem;
+}
+
+.top-author-description {
+    flex-basis: 70%;
+}
+
+.top-author-description-title {
+    font-weight: bold;
+}
+
+.top-author-description-subtitle {
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 0.5rem;
+}
+
+.author-button {
+    background-color: transparent;
+    color: #000000;
+    border: 1px solid lightgray;
+    font-size: 10px;
+    font-weight: 600;
+    outline: none;
+}
+/* Ends: Top Books & Authors */

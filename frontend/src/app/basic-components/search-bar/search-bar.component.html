@@ -1,0 +1,50 @@
+<!-- Starts: Search Section -->
+<div class="search-section">
+    <!-- Starts: Search Navbar -->
+    <div class="search-navbar">
+        <div class="search-navbar-left-column">
+            <div class="material-symbols-outlined search-navbar-left-column-icon">menu</div>
+            <div class="search-navbar-left-column-logo">
+                <span style="color: #DA6365;">BOOK'S</span>TIME
+            </div>
+        </div>
+        <div class="search-navbar-right-column">
+            <div class="search-navbar-right-column-item">
+                <div class="material-symbols-outlined search-navbar-right-column-item-icon">favorite</div>
+                <div class="search-navbar-right-column-item-text">Wishlist</div>
+            </div>
+            <div class="search-navbar-right-column-item">
+                <div class="material-symbols-outlined search-navbar-right-column-item-icon">person</div>
+                <div class="search-navbar-right-column-item-text">Sign in</div>
+            </div>
+        </div>
+    </div><br/><br/><br/>
+    <!-- Ends: Search Navbar -->
+
+    <!-- Starts: Search Headers -->
+    <div class="search-heading">
+        <div class="search-heading-title">BOOK SEARCH</div>
+        <div class="search-heading-subtitle">Reading lists begin as a shelf full of hope until the year files</div>
+    </div><br/><br/><br/>
+    <!-- Ends: Search Headers -->
+
+    <!-- Starts: Search Bar -->
+    <div class="search-bar">
+        <div class="dropdown">
+            <div class="dropdown-toggle dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ examYear }}
+            </div>
+            <div class="dropdown-menu">
+                <ng-container *ngFor="let examYearFor of examYearList">
+                    <div class="dropdown-item" (click)="examYear = examYearFor">{{ examYearFor }}</div>
+                </ng-container>
+            </div>
+        </div>
+        <input type="text" class="search-bar-input" id="search" name="search" placeholder="Search" [(ngModel)]="searchString">
+        <button type="button" class="search-bar-button">
+            <div class="fa fa-search"></div>
+        </button>
+    </div>
+    <!-- Ends: Search Bar -->
+</div><br/>
+<!-- Ends: Search Section -->
