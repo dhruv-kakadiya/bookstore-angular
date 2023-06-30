@@ -11,8 +11,8 @@
         <!-- Starts: Search Bar -->
         <app-search-bar></app-search-bar>
         <!-- Ends: Search Bar -->
-    
-    
+
+
         <!-- Starts: Find More Category -->
         <div class="common-section">
             <!-- Starts: Categories Section Title -->
@@ -20,23 +20,25 @@
                 Find More Category
             </div><br/><br/>
             <!-- Ends: Categories Section Title -->
-    
+
             <!-- Starts: Categories -->
             <div class="categories">
                 <ng-container *ngFor="let category of categoryList; let i = index">
+                    <!-- Starts: Category -->
                     <div class="category category-{{i % 4}}">
                         <div class="category-icon">
                             <img [src]="category.icon" alt="book-icon">
                         </div>
                         <div class="category-title">{{ category.name | uppercase }}</div>
                     </div>
+                    <!-- Ends: Category -->
                 </ng-container>
             </div>
             <!-- Ends: Categories -->
         </div><br/>
         <!-- Ends: Find More Category -->
-    
-    
+
+
         <!-- Starts: Books For Children -->
         <div class="common-section">
             <!-- Starts: Categories Section Title -->
@@ -44,7 +46,7 @@
                 Books For Children
             </div><br/><br/>
             <!-- Ends: Categories Section Title -->
-    
+
             <!-- Starts: Books Section -->
             <div class="children-books">
                 <!-- Starts: Books Section - Left Column -->
@@ -70,7 +72,7 @@
                     </div>
                 </div>
                 <!-- Ends: Books Section - Left Column -->
-    
+
                 <!-- Starts: Books Section - Right Column -->
                 <div class="children-books-right">
                     <!-- Starts: Books Grid -->
@@ -179,8 +181,8 @@
             <!-- Ends: Books Section -->
         </div><br/><br/><br/>
         <!-- Ends: Books For Children -->
-    
-    
+
+
         <!-- Starts: Top Books & Authors -->
         <div class="top-books-authors">
             <!-- Starts: Top Books Column -->
@@ -188,170 +190,72 @@
                 <!-- Starts: Top Books Column Title -->
                 <div class="top-books-title">TOP 6 BOOKS</div><br/>
                 <!-- ends: Top Books Column Title -->
-    
+
                 <!-- Starts: Top Books -->
                 <div class="top-books">
-                    <div class="top-book">
-                        <div class="top-book-image">
-                            <img src="../../assets/book-4.jpg" alt="book-icon">
-                        </div>
-                        <div class="top-book-description">
-                            <div class="top-book-description-title">
-                                Harry Potter
+                    <ng-container *ngFor="let book of bookList; let i = index">
+                        <!-- Starts: Book -->
+                        <div class="top-book">
+                            <div class="top-book-image">
+                                <img [src]="book.image" alt="book-icon">
                             </div>
-                            <div class="top-book-description-subtitle">
-                                Lorem ipsum dolor sit amet.
-                            </div>
-                            <div class="top-book-description-star">
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star-half-o'></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="top-book">
-                        <div class="top-book-image">
-                            <img src="../../assets/book-4.jpg" alt="book-icon">
-                        </div>
-                        <div class="top-book-description">
-                            <div class="top-book-description-title">
-                                Harry Potter
-                            </div>
-                            <div class="top-book-description-subtitle">
-                                Lorem ipsum dolor sit amet.
-                            </div>
-                            <div class="top-book-description-star">
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star-half-o'></div>
+                            <div class="top-book-description">
+                                <div class="top-book-description-title">
+                                    {{ book.title }}
+                                </div>
+                                <div class="top-book-description-subtitle">
+                                    {{ book.short_intro }}
+                                </div><br/>
+                                <!-- Starts: Star Calculations -->
+                                <div class="top-book-description-star">
+                                    <ng-container *ngFor="let star of [].constructor(getFloorValue(book.star))">
+                                        <div class='fa fa-star'></div>
+                                    </ng-container>
+                                    <ng-container *ngIf="isFloat(book.star)">
+                                        <div class='fa fa-star-half-o'></div>
+                                    </ng-container>
+                                </div>
+                                <!-- Ends: Star Calculations -->
                             </div>
                         </div>
-                    </div>
-                    <div class="top-book">
-                        <div class="top-book-image">
-                            <img src="../../assets/book-4.jpg" alt="book-icon">
-                        </div>
-                        <div class="top-book-description">
-                            <div class="top-book-description-title">
-                                Harry Potter
-                            </div>
-                            <div class="top-book-description-subtitle">
-                                Lorem ipsum dolor sit amet.
-                            </div>
-                            <div class="top-book-description-star">
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star-half-o'></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="top-book">
-                        <div class="top-book-image">
-                            <img src="../../assets/book-4.jpg" alt="book-icon">
-                        </div>
-                        <div class="top-book-description">
-                            <div class="top-book-description-title">
-                                Harry Potter
-                            </div>
-                            <div class="top-book-description-subtitle">
-                                Lorem ipsum dolor sit amet.
-                            </div>
-                            <div class="top-book-description-star">
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star-half-o'></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="top-book">
-                        <div class="top-book-image">
-                            <img src="../../assets/book-4.jpg" alt="book-icon">
-                        </div>
-                        <div class="top-book-description">
-                            <div class="top-book-description-title">
-                                Harry Potter
-                            </div>
-                            <div class="top-book-description-subtitle">
-                                Lorem ipsum dolor sit amet.
-                            </div>
-                            <div class="top-book-description-star">
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star-half-o'></div>
-                            </div>
-                        </div>
-                    </div>
+                        <!-- Ends: Book -->
+                    </ng-container>
                 </div>
                 <!-- Ends: Top Books -->
             </div>
             <!-- Ends: Top Books Column -->
-    
+
             <!-- Starts: Top Authors Column -->
             <div class="top-authors-column">
                 <!-- Starts: Top Authors Column Title -->
                 <div class="top-authors-title">TOP 3 AUTHORS</div><br/>
                 <!-- Ends: Top Authors Column Title -->
                 
-                <!-- Starts: Top Author -->
-                <div class="top-author">
-                    <div class="top-author-image">
-                        <img src="../../assets/book-4.jpg" alt="book-icon">
-                    </div>
-                    <div class="top-author-description">
-                        <div class="top-author-description-title">
-                            Harry Potter
+                <ng-container *ngFor="let author of authorList; let i = index">
+                    <!-- Starts: Top Author -->
+                    <div class="top-author">
+                        <div class="top-author-image">
+                            <img [src]="author.image" alt="book-icon">
                         </div>
-                        <div class="top-author-description-subtitle">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, laudantium!
+                        <div class="top-author-description">
+                            <div class="top-author-description-title">
+                                {{ author.name }}
+                            </div>
+                            <div class="top-author-description-subtitle">
+                                {{ author.short_intro }}
+                            </div>
+                            <button type="button" class="author-button">
+                                Read more
+                            </button>
                         </div>
-                        <button type="button" class="author-button">
-                            Read more
-                        </button>
                     </div>
-                </div>
-                <div class="top-author">
-                    <div class="top-author-image">
-                        <img src="../../assets/book-4.jpg" alt="book-icon">
-                    </div>
-                    <div class="top-author-description">
-                        <div class="top-author-description-title">
-                            Harry Potter
-                        </div>
-                        <div class="top-author-description-subtitle">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, laudantium!
-                        </div>
-                        <button type="button" class="author-button">
-                            Read more
-                        </button>
-                    </div>
-                </div>
-                <div class="top-author">
-                    <div class="top-author-image">
-                        <img src="../../assets/book-4.jpg" alt="book-icon">
-                    </div>
-                    <div class="top-author-description">
-                        <div class="top-author-description-title">
-                            Harry Potter
-                        </div>
-                        <div class="top-author-description-subtitle">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, laudantium!
-                        </div>
-                        <button type="button" class="author-button">
-                            Read more
-                        </button>
-                    </div>
-                </div>
-                <!-- Ends: Top Author -->
+                    <!-- Ends: Top Author -->
+                </ng-container>
             </div>
             <!-- Ends: Top Authors Column -->
         </div><br/><br/>
         <!-- Ends: Top Books & Authors -->
-    
+
         <!-- Starts: Footer -->
         <app-footer></app-footer>
         <!-- Ends: Footer -->

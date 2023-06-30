@@ -7,11 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { HomepageModule } from './homepage/homepage.module';
+import { CatalogModule } from './catalog/catalog.module';
 
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
     ],
     imports: [
         BrowserModule,
@@ -19,7 +20,9 @@ import { HomepageModule } from './homepage/homepage.module';
         AppRoutingModule,
         BrowserAnimationsModule,
         HttpClientModule,
+        
         HomepageModule,
+        CatalogModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

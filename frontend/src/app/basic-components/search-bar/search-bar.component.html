@@ -32,16 +32,16 @@
     <div class="search-bar">
         <div class="dropdown">
             <div class="dropdown-toggle dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
-                {{ examYear }}
+                {{ category }}
             </div>
             <div class="dropdown-menu">
-                <ng-container *ngFor="let examYearFor of examYearList">
-                    <div class="dropdown-item" (click)="examYear = examYearFor">{{ examYearFor }}</div>
+                <ng-container *ngFor="let categoryFor of categoryList">
+                    <div class="dropdown-item" (click)="category = categoryFor.name">{{ categoryFor.name }}</div>
                 </ng-container>
             </div>
         </div>
         <input type="text" class="search-bar-input" id="search" name="search" placeholder="Search" [(ngModel)]="searchString">
-        <button type="button" class="search-bar-button">
+        <button type="button" class="search-bar-button" (click)="search()">
             <div class="fa fa-search"></div>
         </button>
     </div>

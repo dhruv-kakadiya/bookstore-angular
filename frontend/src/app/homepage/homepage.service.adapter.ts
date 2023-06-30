@@ -21,15 +21,33 @@ export class HomepageServiceAdapter {
         let apiString =  DJANGO_SERVER + "/api/category/get_all_categories/";
         const getAllCategories = this.http.get(apiString).toPromise();
 
+        apiString =  DJANGO_SERVER + "/api/book/get_top_six_books/";
+        const getTopSixBooks = this.http.get(apiString).toPromise();
+
+        apiString =  DJANGO_SERVER + "/api/author/get_top_three_authors/";
+        const getTopThreeAuthors = this.http.get(apiString).toPromise();
+
         await Promise.all([
-            getAllCategories         // 0
+            getAllCategories,             // 0
+            getTopSixBooks,               // 1
+            getTopThreeAuthors,           // 2
         ]).then(
             (value) => {
-                console.log("Categories: ", value[0]);
-                
+                console.log("Response: ", value);
+
                 this.vm.categoryList = value[0];
                 for (let categoryI = 0; categoryI < this.vm.categoryList.length; categoryI++) {
                     this.vm.categoryList[categoryI].icon = DJANGO_SERVER + this.vm.categoryList[categoryI].icon;
+                }
+
+                this.vm.bookList = value[1];
+                for (let bookI = 0; bookI < this.vm.bookList.length; bookI++) {
+                    this.vm.bookList[bookI].image = DJANGO_SERVER + this.vm.bookList[bookI].image;
+                }
+
+                this.vm.authorList = value[2];
+                for (let authorI = 0; authorI < this.vm.authorList.length; authorI++) {
+                    this.vm.authorList[authorI].image = DJANGO_SERVER + this.vm.authorList[authorI].image;
                 }
             },
             (error) => {
