@@ -1,1 +1,62 @@
-<p>cart works!</p>
+<!-- Starts: Loader -->
+<ng-container *ngIf="isLoading">
+    <app-loader></app-loader>
+</ng-container>
+<!-- Ends: Loader -->
+
+
+<!-- Starts: Cart -->
+<ng-container *ngIf="!isLoading">
+    <div class="cart-page">
+        <!-- Starts: Navbar -->
+        <app-navbar></app-navbar>
+        <!-- Ends: Navbar -->
+
+        <div class="cart-page-title">
+            Cart
+        </div><br/>
+
+        <div class="cart">
+            <div class="cart-items">
+                <ng-container *ngFor="let book of bookList; let i = index">
+                    <div class="cart-item">
+                        <div class="book-image">
+                            <img [src]="book.image" alt="book icon">
+                        </div>
+                        <div class="book-details">
+                            <div class="book-title">{{ book.title }}</div>
+                            <div class="book-price">₹ {{ book.price }}</div>
+                        </div>
+                        <div class="cart-item-quantity">
+                            <div class="fa fa-chevron-up" style="cursor: pointer;" (click)="increaseQuantity(i)"></div>
+                            <div class="my-2">{{ book.quantity }}</div>
+                            <ng-container *ngIf="book.quantity > 0">
+                                <div class="fa fa-chevron-down" style="cursor: pointer;" (click)="decreaseQuantity(i)"></div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="cart-summary">
+                <div class="cart-summary-title">Summary</div><br/>
+
+                <ng-container *ngFor="let book of bookList; let i = index">
+                    <div class="cart-summary-item">
+                        <div class="cart-summary-item-name">{{ book.title }}</div>
+                        <div class="cart-summary-item-price">{{ book.quantity * book.price }}₹</div>
+                    </div>
+                </ng-container>
+
+                <br/><div class="cart-summary-item">
+                    <div class="cart-summary-item-name fw-bold">Total</div>
+                    <div class="cart-summary-item-price fw-bold">{{ totalPrice() }}₹</div>
+                </div><br/><br/>
+
+                <button type="button" class="cart-summary-button">
+                    Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<!-- Ends: Cart -->
