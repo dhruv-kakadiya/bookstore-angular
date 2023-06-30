@@ -129,4 +129,8 @@ export class HomepageComponent implements OnInit {
     isFloat(n: number): boolean {
         return (Number(n) === n && n % 1 !== 0);
     }
+
+    getCategoryBooks(category: string): void {
+        this.router.navigate(['catalog/'], { queryParams: {category: category} });
+    }
 }

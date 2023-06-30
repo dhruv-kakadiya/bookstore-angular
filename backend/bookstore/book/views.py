@@ -17,7 +17,7 @@ class BookTopSixView(APIView):
 class BookView(APIView):
     def get(self, request, pk = None, *args, **kwargs):
         request_data = []
-        if hasattr(kwargs, "param"):
+        if "param" in kwargs:
             request_data = kwargs["param"].split("&")
 
         query = Q()

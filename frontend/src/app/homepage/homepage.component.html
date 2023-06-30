@@ -25,7 +25,7 @@
             <div class="categories">
                 <ng-container *ngFor="let category of categoryList; let i = index">
                     <!-- Starts: Category -->
-                    <div class="category category-{{i % 4}}">
+                    <div class="category category-{{i % 4}}" (click)="getCategoryBooks(category.name)">
                         <div class="category-icon">
                             <img [src]="category.icon" alt="book-icon">
                         </div>
