@@ -110,3 +110,5 @@ ENV/
 # Database
 tadb
 db.sqlite3
+
+static/
