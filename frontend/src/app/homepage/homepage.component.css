@@ -16,10 +16,14 @@ img {
 
 /* Starts: Find More Category */
 .categories {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     align-items: center;
-    align-content: center;
+    align-content: center; */
+
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: auto auto auto auto;
 }
 
 .category {
@@ -60,6 +64,22 @@ img {
 }
 
 .cookbooks-category {
+    background: linear-gradient(to right top, #FF70B6, #ABC9FE), linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+}
+
+.category-0 {
+    background: linear-gradient(to right top, #FDAC7C, #F8CC6B), linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+}
+
+.category-1 {
+    background: linear-gradient(to right top, #FF5CCC, #FE82A3), linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+}
+
+.category-2 {
+    background: linear-gradient(to right top, #8994E2, #6CBFF7), linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+}
+
+.category-3 {
     background: linear-gradient(to right top, #FF70B6, #ABC9FE), linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
 }
 /* Ends: Find More Category */

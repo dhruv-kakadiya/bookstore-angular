@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoaderComponent } from './loader/loader.component';
 
 
 @NgModule({
     declarations: [
         SearchBarComponent,
         FooterComponent,
+        LoaderComponent,
     ],
     entryComponents: [],
     imports: [
@@ -21,6 +23,7 @@ import { FooterComponent } from './footer/footer.component';
         FormsModule,
         SearchBarComponent,
         FooterComponent,
+        LoaderComponent,
     ],
 })
 export class BasicComponentsModule {}
