@@ -21,20 +21,20 @@ export class HomepageServiceAdapter {
         let apiString =  DJANGO_SERVER + "/api/category/get_all_categories/";
         const getAllCategories = this.http.get(apiString).toPromise();
 
-        apiString =  DJANGO_SERVER + "/api/book/get_top_six_books/";
+        apiString =  DJANGO_SERVER + "/api/book/search/count=6";
         const getTopSixBooks = this.http.get(apiString).toPromise();
 
         apiString =  DJANGO_SERVER + "/api/author/get_top_three_authors/";
         const getTopThreeAuthors = this.http.get(apiString).toPromise();
 
-        apiString =  DJANGO_SERVER + "/api/book/get_children_books/";
+        apiString =  DJANGO_SERVER + "/api/book/search/category=children&count=9";
         const getChildrenBooks = this.http.get(apiString).toPromise();
 
         await Promise.all([
             getAllCategories,             // 0
             getTopSixBooks,               // 1
             getTopThreeAuthors,           // 2
-            getChildrenBooks,           // 2
+            getChildrenBooks,             // 3
         ]).then(
             (value: any) => {
                 console.log("Response: ", value);
