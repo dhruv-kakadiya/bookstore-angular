@@ -1,0 +1,46 @@
+.catalog {
+    padding: 1rem 10rem;
+    padding-bottom: 3rem;
+}
+
+.catalog-title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.books {
+    display: grid;
+    row-gap: 2rem;
+    column-gap: 3rem;
+    grid-template-columns: auto auto auto auto;
+}
+
+.book {
+    cursor: pointer;
+}
+
+.book-image {
+    flex-basis: 40%;
+}
+
+.book-image img {
+    border-radius: 0.3rem;
+    width: 100%;
+}
+
+.book-description {
+    flex-basis: 50%;
+}
+
+.book-description-title {
+    font-weight: bold;
+}
+
+.book-description-subtitle {
+    font-size: 12px;
+    color: gray;
+}
+
+.fa-star {
+    margin-right: 0.3rem;
+}

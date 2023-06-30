@@ -9,6 +9,7 @@ class Author(models.Model):
     image = models.ImageField(null = True, blank = True)
     short_intro = models.TextField()
     brief_intro = RichTextField()
+    star = models.FloatField(default = 0)
 
     def __str__(self):
         return self.name

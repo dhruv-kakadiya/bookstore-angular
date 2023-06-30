@@ -1,0 +1,53 @@
+<!-- Starts: Loader -->
+<ng-container *ngIf="isLoading">
+    <app-loader></app-loader>
+</ng-container>
+<!-- Ends: Loader -->
+
+<!-- Starts: Home Page -->
+<ng-container *ngIf="!isLoading">
+    <div class="catalog-page">
+        <!-- Starts: Search Bar -->
+        <!-- <app-search-bar></app-search-bar> -->
+        <!-- Ends: Search Bar -->
+    </div>
+
+    <div class="catalog">
+        <div class="catalog-title">
+            Searched Results - {{ bookList.length }}
+        </div><br/><br/>
+
+        <!-- Starts: Books -->
+        <div class="books">
+            <ng-container *ngFor="let book of bookList; let i = index">
+                <!-- Starts: Book -->
+                <div class="book">
+                    <div class="book-image">
+                        <img [src]="book.image" alt="book-icon">
+                    </div>
+                    <div class="book-description">
+                        <div class="book-description-title">
+                            {{ book.title }}
+                        </div>
+                        <div class="book-description-subtitle">
+                            {{ book.short_intro }}
+                        </div>
+                        <!-- Starts: Star Calculations -->
+                        <div class="book-description-star">
+                            <ng-container *ngFor="let star of [].constructor(getFloorValue(book.star))">
+                                <div class='fa fa-star'></div>
+                            </ng-container>
+                            <ng-container *ngIf="isFloat(book.star)">
+                                <div class='fa fa-star-half-o'></div>
+                            </ng-container>
+                        </div>
+                        <!-- Ends: Star Calculations -->
+                    </div>
+                </div>
+                <!-- Ends: Book -->
+            </ng-container>
+        </div>
+        <!-- Ends: Top Books -->
+    </div>
+</ng-container>
+<!-- Ends: Home Page -->
