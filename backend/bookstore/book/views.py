@@ -8,19 +8,14 @@ from .serializers import BookSerializer
 
 
 # Create your views here.
-class BookTopSixView(APIView):
-    def get(self, request, pk = None, *args, **kwargs):
-        books = Book.objects.all().order_by('-star')[:6]
-        return Response(BookSerializer(books, many = True).data, status = status.HTTP_200_OK)
-
-
 class BookView(APIView):
     def get(self, request, pk = None, *args, **kwargs):
         request_data = []
-        if hasattr(kwargs, "param"):
+        if "param" in kwargs:
             request_data = kwargs["param"].split("&")
 
         query = Q()
+        count = 0
         for data in request_data:
             [key, value] = data.split("=", 1)
             if value:
@@ -29,5 +24,9 @@ class BookView(APIView):
                 elif key == "word":
                     query |= Q(title__icontains = value)
                     query |= Q(bookauthor__author__name__icontains = value)
-        books = Book.objects.filter(query)
+                elif key == "count":
+                    count = int(value)
+        books = Book.objects.filter(query).order_by('-star')
+        if count:
+            books = books[:count]
         return Response(BookSerializer(books, many = True).data, status = status.HTTP_200_OK)

@@ -21,18 +21,22 @@ export class HomepageServiceAdapter {
         let apiString =  DJANGO_SERVER + "/api/category/get_all_categories/";
         const getAllCategories = this.http.get(apiString).toPromise();
 
-        apiString =  DJANGO_SERVER + "/api/book/get_top_six_books/";
+        apiString =  DJANGO_SERVER + "/api/book/search/count=6";
         const getTopSixBooks = this.http.get(apiString).toPromise();
 
         apiString =  DJANGO_SERVER + "/api/author/get_top_three_authors/";
         const getTopThreeAuthors = this.http.get(apiString).toPromise();
 
+        apiString =  DJANGO_SERVER + "/api/book/search/category=children&count=9";
+        const getChildrenBooks = this.http.get(apiString).toPromise();
+
         await Promise.all([
             getAllCategories,             // 0
             getTopSixBooks,               // 1
             getTopThreeAuthors,           // 2
+            getChildrenBooks,             // 3
         ]).then(
-            (value) => {
+            (value: any) => {
                 console.log("Response: ", value);
 
                 this.vm.categoryList = value[0];
@@ -40,14 +44,21 @@ export class HomepageServiceAdapter {
                     this.vm.categoryList[categoryI].icon = DJANGO_SERVER + this.vm.categoryList[categoryI].icon;
                 }
 
-                this.vm.bookList = value[1];
-                for (let bookI = 0; bookI < this.vm.bookList.length; bookI++) {
-                    this.vm.bookList[bookI].image = DJANGO_SERVER + this.vm.bookList[bookI].image;
+                this.vm.topSixBookList = value[1];
+                for (let bookI = 0; bookI < this.vm.topSixBookList.length; bookI++) {
+                    this.vm.topSixBookList[bookI].image = DJANGO_SERVER + this.vm.topSixBookList[bookI].image;
                 }
 
                 this.vm.authorList = value[2];
                 for (let authorI = 0; authorI < this.vm.authorList.length; authorI++) {
                     this.vm.authorList[authorI].image = DJANGO_SERVER + this.vm.authorList[authorI].image;
+                }
+
+                if (value[3].length) {
+                    this.vm.childrenBookList = value[3];
+                    for (let bookI = 0; bookI < this.vm.childrenBookList.length; bookI++) {
+                        this.vm.childrenBookList[bookI].image = DJANGO_SERVER + this.vm.childrenBookList[bookI].image;
+                    }
                 }
             },
             (error) => {

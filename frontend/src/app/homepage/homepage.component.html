@@ -9,7 +9,7 @@
 <ng-container *ngIf="!isLoading">
     <div class="home-page">
         <!-- Starts: Search Bar -->
-        <app-search-bar></app-search-bar>
+        <app-search-bar [categoryList]="categoryList"></app-search-bar>
         <!-- Ends: Search Bar -->
 
 
@@ -25,7 +25,7 @@
             <div class="categories">
                 <ng-container *ngFor="let category of categoryList; let i = index">
                     <!-- Starts: Category -->
-                    <div class="category category-{{i % 4}}">
+                    <div class="category category-{{i % 4}}" (click)="getCategoryBooks(category.name)">
                         <div class="category-icon">
                             <img [src]="category.icon" alt="book-icon">
                         </div>
@@ -53,21 +53,25 @@
                 <div class="children-books-left">
                     <div class="children-books-left-book">
                         <div class="children-books-left-book-image">
-                            <img src="../../assets/book-4.jpg" alt="book-icon">
+                            <img [src]="childrenBookList[0].image" alt="book-icon">
                         </div>
                         <div class="children-books-left-book-description">
                             <div class="children-books-left-book-description-title">
-                                Harry Potter
+                                {{ childrenBookList[0].title }}
                             </div>
                             <div class="children-books-left-book-description-subtitle">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolor voluptatem minus eveniet molestiae officiis dolore unde doloribus corrupti tenetur?
+                                {{ childrenBookList[0].short_intro }}
                             </div>
+                            <!-- Starts: Star Calculations -->
                             <div class="children-books-left-book-description-star">
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star-half-o'></div>
+                                <ng-container *ngFor="let star of [].constructor(getFloorValue(childrenBookList[0].star))">
+                                    <div class='fa fa-star'></div>
+                                </ng-container>
+                                <ng-container *ngIf="isFloat(childrenBookList[0].star)">
+                                    <div class='fa fa-star-half-o'></div>
+                                </ng-container>
                             </div>
+                            <!-- Ends: Star Calculations -->
                         </div>
                     </div>
                 </div>
@@ -77,102 +81,26 @@
                 <div class="children-books-right">
                     <!-- Starts: Books Grid -->
                     <div class="children-books-right-books">
-                        <div class="children-books-right-book">
-                            <div class="children-books-right-book-image">
-                                <img src="../../assets/book-4.jpg" alt="book-icon">
-                            </div>
-                            <div class="children-books-right-book-title">Harry Potter</div>
-                            <div class="children-books-right-book-image">
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star-half-o'></div>
-                            </div>
-                        </div>
-                        <div class="children-books-right-book">
-                            <div class="children-books-right-book-image">
-                                <img src="../../assets/book-4.jpg" alt="book-icon">
-                            </div>
-                            <div class="children-books-right-book-title">Harry Potter</div>
-                            <div class="children-books-right-book-image">
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star-half-o'></div>
-                            </div>
-                        </div>
-                        <div class="children-books-right-book">
-                            <div class="children-books-right-book-image">
-                                <img src="../../assets/book-4.jpg" alt="book-icon">
-                            </div>
-                            <div class="children-books-right-book-title">Harry Potter</div>
-                            <div class="children-books-right-book-image">
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star-half-o'></div>
-                            </div>
-                        </div>
-                        <div class="children-books-right-book">
-                            <div class="children-books-right-book-image">
-                                <img src="../../assets/book-4.jpg" alt="book-icon">
-                            </div>
-                            <div class="children-books-right-book-title">Harry Potter</div>
-                            <div class="children-books-right-book-image">
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star-half-o'></div>
-                            </div>
-                        </div>
-                        <div class="children-books-right-book">
-                            <div class="children-books-right-book-image">
-                                <img src="../../assets/book-4.jpg" alt="book-icon">
-                            </div>
-                            <div class="children-books-right-book-title">Harry Potter</div>
-                            <div class="children-books-right-book-image">
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star-half-o'></div>
-                            </div>
-                        </div>
-                        <div class="children-books-right-book">
-                            <div class="children-books-right-book-image">
-                                <img src="../../assets/book-4.jpg" alt="book-icon">
-                            </div>
-                            <div class="children-books-right-book-title">Harry Potter</div>
-                            <div class="children-books-right-book-image">
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star-half-o'></div>
-                            </div>
-                        </div>
-                        <div class="children-books-right-book">
-                            <div class="children-books-right-book-image">
-                                <img src="../../assets/book-4.jpg" alt="book-icon">
-                            </div>
-                            <div class="children-books-right-book-title">Harry Potter</div>
-                            <div class="children-books-right-book-image">
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star-half-o'></div>
-                            </div>
-                        </div>
-                        <div class="children-books-right-book">
-                            <div class="children-books-right-book-image">
-                                <img src="../../assets/book-4.jpg" alt="book-icon">
-                            </div>
-                            <div class="children-books-right-book-title">Harry Potter</div>
-                            <div class="children-books-right-book-image">
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star'></div>
-                                <div class='fa fa-star-half-o'></div>
-                            </div>
-                        </div>
+                        <ng-container *ngFor="let book of childrenBookList; let i = index">
+                            <ng-container *ngIf="i > 0">
+                                <div class="children-books-right-book">
+                                    <div class="children-books-right-book-image">
+                                        <img [src]="book.image" alt="book-icon">
+                                    </div>
+                                    <div class="children-books-right-book-title">{{ book.title }}</div>
+                                    <!-- Starts: Star Calculations -->
+                                    <div class="children-books-right-book-image">
+                                        <ng-container *ngFor="let star of [].constructor(getFloorValue(book.star))">
+                                            <div class='fa fa-star'></div>
+                                        </ng-container>
+                                        <ng-container *ngIf="isFloat(book.star)">
+                                            <div class='fa fa-star-half-o'></div>
+                                        </ng-container>
+                                    </div>
+                                    <!-- Ends: Star Calculations -->
+                                </div>
+                            </ng-container>
+                        </ng-container>
                     </div>
                     <!-- Ends: Books Grid -->
                 </div>
@@ -193,7 +121,7 @@
 
                 <!-- Starts: Top Books -->
                 <div class="top-books">
-                    <ng-container *ngFor="let book of bookList; let i = index">
+                    <ng-container *ngFor="let book of topSixBookList; let i = index">
                         <!-- Starts: Book -->
                         <div class="top-book">
                             <div class="top-book-image">

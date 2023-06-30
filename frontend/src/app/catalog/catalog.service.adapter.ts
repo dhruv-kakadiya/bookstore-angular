@@ -38,26 +38,29 @@ export class CatalogServiceAdapter {
             }
         );
 
-        if (!window.location.search) {
+        if (window.location.search) {
+            console.log(window.location.search);
             apiString =  DJANGO_SERVER + "/api/book/search/" + window.location.search.substr(1);
-            const getAllCategories = this.http.get(apiString).toPromise();
-
-            await Promise.all([
-                getAllCategories,             // 0
-            ]).then(
-                (value) => {
-                    console.log("Response: ", value);
-
-                    this.vm.bookList = value[0];
-                    for (let bookI = 0; bookI < this.vm.bookList.length; bookI++) {
-                        this.vm.bookList[bookI].image = DJANGO_SERVER + this.vm.bookList[bookI].image;
-                    }
-                },
-                (error) => {
-                    console.log(error);
-                }
-            );
+        } else {
+            apiString =  DJANGO_SERVER + "/api/book/search/";
         }
+        const getBooks = this.http.get(apiString).toPromise();
+
+        await Promise.all([
+            getBooks,             // 0
+        ]).then(
+            (value) => {
+                console.log("Response: ", value);
+
+                this.vm.bookList = value[0];
+                for (let bookI = 0; bookI < this.vm.bookList.length; bookI++) {
+                    this.vm.bookList[bookI].image = DJANGO_SERVER + this.vm.bookList[bookI].image;
+                }
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
         this.vm.isLoading = false;
     }
 }

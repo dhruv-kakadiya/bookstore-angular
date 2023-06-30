@@ -37,7 +37,7 @@ export class HomepageComponent implements OnInit {
             name: "Cookbooks"
         },
     ];
-    bookList: Book[] = [
+    topSixBookList: Book[] = [
         {
             brief_intro: "Hello",
             id: 1,
@@ -108,6 +108,97 @@ export class HomepageComponent implements OnInit {
             star: 5
         }
     ];
+    childrenBookList: Book[] = [
+        {
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },{
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+    ];
 
     serviceAdapter: any;
 
@@ -128,5 +219,9 @@ export class HomepageComponent implements OnInit {
 
     isFloat(n: number): boolean {
         return (Number(n) === n && n % 1 !== 0);
+    }
+
+    getCategoryBooks(category: string): void {
+        this.router.navigate(['catalog/'], { queryParams: {category: category} });
     }
 }
