@@ -66,4 +66,8 @@ export class SearchBarComponent implements OnInit {
             this.router.navigate(['catalog/'], { queryParams: queryParams });
         }
     }
+
+    bookCatalog(): void {
+        this.router.navigate(['catalog/']);
+    }
 }
