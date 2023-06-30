@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoaderComponent } from './loader/loader.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { LoaderComponent } from './loader/loader.component';
         SearchBarComponent,
         FooterComponent,
         LoaderComponent,
+        NavbarComponent,
     ],
     entryComponents: [],
     imports: [
@@ -21,9 +23,11 @@ import { LoaderComponent } from './loader/loader.component';
     exports: [
         CommonModule,
         FormsModule,
+        
         SearchBarComponent,
         FooterComponent,
         LoaderComponent,
+        NavbarComponent,
     ],
 })
 export class BasicComponentsModule {}
