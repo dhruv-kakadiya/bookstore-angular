@@ -14,6 +14,12 @@ class BookTopSixView(APIView):
         return Response(BookSerializer(books, many = True).data, status = status.HTTP_200_OK)
 
 
+class ChildrenBookView(APIView):
+    def get(self, request, pk = None, *args, **kwargs):
+        books = Book.objects.filter(bookcategory__category__name__iexact = "children").order_by('-star')[:6]
+        return Response(BookSerializer(books, many = True).data, status = status.HTTP_200_OK)
+
+
 class BookView(APIView):
     def get(self, request, pk = None, *args, **kwargs):
         request_data = []

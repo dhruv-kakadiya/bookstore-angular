@@ -1,7 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { CatalogServiceAdapter } from 'src/app/catalog/catalog.service.adapter';
 import { Category } from 'src/app/common-classes/category';
 
 
@@ -15,40 +13,37 @@ export class SearchBarComponent implements OnInit {
     searchString: string = "";
     categoryDefault: string = "Category";
     category: string = this.categoryDefault;
-    categoryList: Category[] = [
-        {
-            id: 0,
-            icon: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
-            name: "Biography"
-        },
-        {
-            id: 1,
-            icon: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
-            name: "Romantic"
-        },
-        {
-            id: 0,
-            icon: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
-            name: "Business"
-        },
-        {
-            id: 0,
-            icon: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
-            name: "Cookbooks"
-        },
-    ];
-
-    serviceAdapter: any;
+    @Input() categoryList: Category[] = [];
 
     constructor(
-        private http: HttpClient,
         private router: Router,
     ) { }
 
     ngOnInit(): void {
-        this.serviceAdapter = new CatalogServiceAdapter(this.http);
-        this.serviceAdapter.initializeAdapter(this);
-        this.serviceAdapter.initializeData();
+        if (!this.categoryList.length) {
+            this.categoryList = [
+                {
+                    id: 0,
+                    icon: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+                    name: "Biography"
+                },
+                {
+                    id: 1,
+                    icon: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+                    name: "Romantic"
+                },
+                {
+                    id: 0,
+                    icon: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+                    name: "Business"
+                },
+                {
+                    id: 0,
+                    icon: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+                    name: "Cookbooks"
+                },
+            ];
+        }
     }
 
     search(): void {

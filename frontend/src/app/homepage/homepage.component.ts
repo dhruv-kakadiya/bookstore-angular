@@ -37,7 +37,7 @@ export class HomepageComponent implements OnInit {
             name: "Cookbooks"
         },
     ];
-    bookList: Book[] = [
+    topSixBookList: Book[] = [
         {
             brief_intro: "Hello",
             id: 1,
@@ -107,6 +107,97 @@ export class HomepageComponent implements OnInit {
             short_intro: "Indian Author, Most Famous Indian Author",
             star: 5
         }
+    ];
+    childrenBookList: Book[] = [
+        {
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },{
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },
     ];
 
     serviceAdapter: any;
