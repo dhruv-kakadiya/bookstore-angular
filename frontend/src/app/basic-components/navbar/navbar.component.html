@@ -2,7 +2,7 @@
 <div class="search-navbar">
     <div class="search-navbar-left-column">
         <div class="material-symbols-outlined search-navbar-left-column-icon">menu</div>
-        <div class="search-navbar-left-column-logo">
+        <div class="search-navbar-left-column-logo" (click)="navigateToHome()">
             <span style="color: #DA6365;">BOOK'S</span>TIME
         </div>
     </div>
@@ -12,9 +12,13 @@
             <div class="search-navbar-right-column-item-text">Wishlist</div>
         </div>
         <div class="search-navbar-right-column-item">
+            <div class="material-symbols-outlined search-navbar-right-column-item-icon">shopping_cart</div>
+            <div class="search-navbar-right-column-item-text">Cart</div>
+        </div>
+        <!-- <div class="search-navbar-right-column-item">
             <div class="material-symbols-outlined search-navbar-right-column-item-icon">person</div>
             <div class="search-navbar-right-column-item-text">Sign in</div>
-        </div>
+        </div> -->
     </div>
 </div><br/><br/><br/>
 <!-- Ends: Search Navbar -->
