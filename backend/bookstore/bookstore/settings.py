@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,9 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    "rest_framework",
+    "corsheaders",
+    "ckeditor",
+
+    "author",
+    "category",
+    "book",
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -105,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -115,9 +124,60 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATIC_URL = "/static/"
+MEDIA_URL = "/images/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "static/images")
+CORS_ALLOWED_ORIGINS = ["http://localhost:4200"]
+
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Basic',
+        'width': '100%',
+        'tabSpaces': 4,
+        'mathJaxLib': 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML',
+        'toolbar_Basic': [
+            {'name': 'clipboard', 'items': ['Source', 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']},
+            {'name': 'editing', 'items': ['Find', 'Replace', ]},
+            {
+                'name': 'basicstyles',
+                'items': ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat']
+            },
+            {'name': 'formulae', 'items': ['Mathjax']},
+            {
+                'name': 'insert',
+                'items': ['Link', 'Image', 'Table', 'HorizontalRule', 'Smiley', ]
+            },
+            {'name': 'colors', 'items': ['TextColor', 'BGColor']},
+            {
+                'name': 'paragraph',
+                'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-',
+                        'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', ]
+            },
+            {'name': 'styles', 'items': ['Styles', 'Format', 'Font', 'FontSize']},
+        ],
+        'extraPlugins': ','.join([
+            'uploadimage',
+            'div',
+            'autolink',
+            'iframe',
+            'embed',
+            'embedsemantic',
+            'autoembed',
+            'autogrow',
+            'uploadimage',
+            'widget',
+            'lineutils',
+            'clipboard',
+            'dialog',
+            'dialogui',
+            'mathjax',
+            'codesnippet',
+        ]),
+    },
+}
