@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from '../common-classes/book';
 import { HttpClient } from '@angular/common/http';
 import { CartServiceAdapter } from './cart.service.adapter';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-cart',
@@ -65,6 +66,7 @@ export class CartComponent implements OnInit {
 
     constructor(
         private http: HttpClient,
+        private router: Router,
     ) { }
 
     ngOnInit(): void {
@@ -102,7 +104,6 @@ export class CartComponent implements OnInit {
             currency: this.currency,
             name: 'BookStore', // company name or product name
             description: 'Books',  // product description
-            // image: '../../assets/Images/combined_logo.svg', // company logo or product image
             order_id: order_id,
             modal: {
                 // We should prevent closing of the form when esc key is pressed.
@@ -122,7 +123,9 @@ export class CartComponent implements OnInit {
             console.log(options);
             response['amount'] = this.amount;
             this.serviceAdapter.verifyTransaction(response);
+            localStorage.setItem('bookStore_cart_item_list', JSON.stringify([]));
             alert("Your order has been placed.");
+            this.router.navigate(['catalog/']);
         });
         options.modal.ondismiss = (() => {
             let data = {

@@ -52,10 +52,19 @@ export class CatalogServiceAdapter {
             (value) => {
                 console.log("Response: ", value);
 
+                let cartItemList: number[] = localStorage.getItem('bookStore_cart_item_list') ? JSON.parse(localStorage.getItem('bookStore_cart_item_list') as string) : [];
+
                 this.vm.bookList = value[0];
                 for (let bookI = 0; bookI < this.vm.bookList.length; bookI++) {
                     this.vm.bookList[bookI].image = DJANGO_SERVER + this.vm.bookList[bookI].image;
                     this.vm.bookList[bookI].inCart = false;
+
+                    for(let cartItemI = 0; cartItemI < cartItemList.length; cartItemI++) {
+                        if (this.vm.bookList[bookI].id == cartItemList[cartItemI]) {
+                            this.vm.bookList[bookI].inCart = true;
+                            break;
+                        }
+                    }
                 }
             },
             (error) => {

@@ -26,11 +26,12 @@ export class CartServiceAdapter {
     /* Initialize Data */
     async initializeData() {
         this.vm.isLoading = true;
-        let apiString = DJANGO_SERVER + "/api/book/search/count=6";
-        const getTopSixBooks = this.http.get(apiString).toPromise();
+        let cartItemList: number[] = localStorage.getItem('bookStore_cart_item_list') ? JSON.parse(localStorage.getItem('bookStore_cart_item_list') as string) : [];
+        let apiString = DJANGO_SERVER + "/api/book/cart/id=" + JSON.stringify(cartItemList);
+        const getCartBooks = this.http.get(apiString).toPromise();
 
         await Promise.all([
-            getTopSixBooks,               // 0
+            getCartBooks,               // 0
         ]).then(
             (value: any) => {
                 console.log("Response: ", value);
