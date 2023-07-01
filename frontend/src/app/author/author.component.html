@@ -48,9 +48,44 @@
 
         <!-- Starts: If Author Doesn't Exits -->
         <ng-container *ngIf="!isAuthorFound">
-            <div class="author-not-found">
+            <!-- <div class="author-not-found">
                 Author Not Found!
+            </div> -->
+
+            <div class="author-not-found">
+                Dummy Data: 
             </div>
+
+            <!-- Starts: Author -->
+            <div class="author">
+                <!-- Starts: Author Basic Details -->
+                <div class="author-basic-details">
+                    <div class="author-image">
+                        <img [src]="author.image" alt="author image">
+                    </div>
+                    <div class="author-description">
+                        <div class="author-title">{{ author.name }}</div>
+                        <div class="author-subtitle my-2">{{ author.short_intro }}</div>
+                        <div class="author-subtitle my-2"><b>Birth Date: </b> {{ author.dob | date: 'mediumDate' }}</div>
+                        <!-- Starts: Star Calculations -->
+                        <div class="author-description-star my-2">
+                            <ng-container *ngFor="let star of [].constructor(getFloorValue(author.star))">
+                                <div class='fa fa-star'></div>
+                            </ng-container>
+                            <ng-container *ngIf="isFloat(author.star)">
+                                <div class='fa fa-star-half-o'></div>
+                            </ng-container>
+                        </div>
+                        <!-- Ends: Star Calculations -->
+                    </div>
+                </div><br/><br/>
+                <!-- Ends: Author Basic Details -->
+
+                <!-- Starts: Author Brief Intro -->
+                <div class="author-brief-description" [innerHTML]="author.brief_intro"></div>
+                <!-- Ends: Author Brief Intro -->
+            </div>
+            <!-- Ends: Author -->
         </ng-container>
         <!-- Ends: If Author Doesn't Exits -->
     </div>
