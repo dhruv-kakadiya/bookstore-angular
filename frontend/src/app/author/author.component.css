@@ -1,7 +1,8 @@
+/* Starts: Author Page */
 .author {
     padding: 1rem 10rem;
 }
-
+    /* Starts: Author Basic Details */
 .author-basic-details {
     display: flex;
     align-content: center;
@@ -10,6 +11,7 @@
 
 .author-image {
     flex-basis: 30%;
+    max-width: 200px;
 }
 
 img {
@@ -29,13 +31,12 @@ img {
 .fa-star {
     margin-right: 0.3rem;
 }
+    /* Ends: Author Basic Details */
 
-.author-price {
-    font-weight: bold;
-}
-
+    /* Starts: Author Not Found */
 .author-not-found {
     font-size: 3rem;
     font-weight: bold;
     padding: 1rem 10rem;
 }
+/* Ends: Author Page */

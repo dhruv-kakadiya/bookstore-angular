@@ -11,8 +11,11 @@
         <app-navbar></app-navbar>
         <!-- Ends: Navbar -->
 
+        <!-- Starts: Book Exists -->
         <ng-container *ngIf="isBookFound">
+            <!-- Starts: Book -->
             <div class="book">
+                <!-- Starts: Book Basic Details -->
                 <div class="book-basic-details">
                     <div class="book-image">
                         <img [src]="book.image" alt="book icon">
@@ -32,27 +35,40 @@
                         <!-- Ends: Star Calculations -->
                         <div class="book-price">{{ book.price }} ₹</div><br/><br/>
 
+                        <!-- Starts: Add to Cart Button -->
                         <ng-container *ngIf="!book.inCart">
                             <button type="button" class="add-to-cart-button" (click)="addToCart()">
                                 Add to Cart
                             </button>
                         </ng-container>
+                        <!-- Ends: Add to Cart Button -->
+                        
+                        <!-- Starts: In Cart Button -->
                         <ng-container *ngIf="book.inCart">
                             <button type="button" class="add-to-cart-button">
                                 In Cart
                             </button>
                         </ng-container>
+                        <!-- Ends: In Cart Button -->
                     </div>
                 </div><br/><br/>
-                <div class="book-brief-description" [innerHTML]="book.brief_intro"></div>
-            </div>
-        </ng-container>
+                <!-- Ends: Book Basic Details -->
 
+                <!-- Starts: Book Brief Intro -->
+                <div class="book-brief-description" [innerHTML]="book.brief_intro"></div>
+                <!-- Ends: Book Brief Intro -->
+            </div>
+            <!-- Ends: Book -->
+        </ng-container>
+        <!-- Ends: Book Exists -->
+
+        <!-- Starts: Book Doesn't Exists -->
         <ng-container *ngIf="!isBookFound">
             <div class="book-not-found">
                 Book Not Found!
             </div>
         </ng-container>
+        <!-- Ends: Book Doesn't Exists -->
     </div>
 </ng-container>
 <!-- Ends: Catalog Page -->

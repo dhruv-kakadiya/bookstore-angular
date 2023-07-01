@@ -9,11 +9,11 @@ import { Category } from 'src/app/common-classes/category';
     styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
+    @Input() categoryList: Category[] = [];
 
     searchString: string = "";
     categoryDefault: string = "Category";
     category: string = this.categoryDefault;
-    @Input() categoryList: Category[] = [];
 
     minPrice: number = 0;
     maxPrice: number = 0;
@@ -52,6 +52,7 @@ export class SearchBarComponent implements OnInit {
         }
     }
 
+    // Starts: Search Function
     search(): void {
         let queryParams = {
             word: "",
@@ -59,30 +60,36 @@ export class SearchBarComponent implements OnInit {
             minPrice: 0,
             maxPrice: 0,
             minDate: "",
-            maxDate: ""
+            maxDate: "",
         };
         let searchParametersProvides: boolean = false;
 
+        // Starts: Check Search-String Given
         if (this.searchString.trim()) {
             searchParametersProvides = true;
             queryParams.word = this.searchString.toLowerCase();
         }
+        // Starts: Check Category Given
         if (this.category != this.categoryDefault) {
             searchParametersProvides = true;
             queryParams.category = this.category.toLowerCase();
         }
+        // Starts: Check Min-Price Given
         if (this.minPrice) {
             searchParametersProvides = true;
             queryParams.minPrice = this.minPrice;
         }
+        // Starts: Check Max-Price Given
         if (this.maxPrice) {
             searchParametersProvides = true;
             queryParams.maxPrice = this.maxPrice;
         }
+        // Starts: Check Min-Date Given
         if (this.minDate) {
             searchParametersProvides = true;
             queryParams.minDate = this.minDate;
         }
+        // Starts: Check Max-Date Given
         if (this.maxDate) {
             searchParametersProvides = true;
             queryParams.maxDate = this.maxDate;
@@ -92,8 +99,11 @@ export class SearchBarComponent implements OnInit {
             this.router.navigate(['catalog/'], { queryParams: queryParams });
         }
     }
+    // Ends: Search Function
 
+    // Starts: Navigate To Catalog
     bookCatalog(): void {
         this.router.navigate(['catalog/']);
     }
+    // Ends: Navigate To Catalog
 }

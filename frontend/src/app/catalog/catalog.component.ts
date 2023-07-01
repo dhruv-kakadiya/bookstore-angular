@@ -31,14 +31,17 @@ export class CatalogComponent implements OnInit {
         this.serviceAdapter.initializeData();
     }
 
+    // Starts: Return the floor value
     getFloorValue(n: number): number {
         return Math.floor(n);
     }
 
+    // Starts: Check if a number is type of float or not
     isFloat(n: number): boolean {
         return (Number(n) === n && n % 1 !== 0);
     }
 
+    // Starts: Add Item in the Cart
     addToCart(index: number): void {
         this.bookList[index].inCart = true;
         let cartItemList: number[] = localStorage.getItem('bookStore_cart_item_list') ? JSON.parse(localStorage.getItem('bookStore_cart_item_list') as string) : [];
@@ -46,6 +49,7 @@ export class CatalogComponent implements OnInit {
         localStorage.setItem('bookStore_cart_item_list', JSON.stringify(cartItemList));
     }
 
+    // Starts: Open Book
     navigateToBook(index: number): void {
         window.open(FRONTEND + '/book?id=' + this.bookList[index].id, '_blank');
     }

@@ -1,7 +1,9 @@
+/* Starts: Book Page */
 .book {
     padding: 1rem 10rem;
 }
 
+    /* Starts: Book Basic Details */
 .book-basic-details {
     display: flex;
     align-content: center;
@@ -34,13 +36,15 @@ img {
 .book-price {
     font-weight: bold;
 }
+    /* Ends: Book Basic Details */
 
+    /* Starts: Book Not Found */
 .book-not-found {
     font-size: 3rem;
     font-weight: bold;
     padding: 1rem 10rem;
 }
-
+    /* Starts: Add to Cart Button */
 .add-to-cart-button {
     background-color: #DA6365;
     color: #FFFFFF;
@@ -49,3 +53,4 @@ img {
     padding: 0.5rem 2rem;
     border-radius: 0.2rem;
 }
+/* Starts: Book Page */

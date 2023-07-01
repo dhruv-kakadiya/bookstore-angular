@@ -11,8 +11,11 @@
         <app-navbar></app-navbar>
         <!-- Ends: Navbar -->
 
+        <!-- Starts: If Author Exits -->
         <ng-container *ngIf="isAuthorFound">
+            <!-- Starts: Author -->
             <div class="author">
+                <!-- Starts: Author Basic Details -->
                 <div class="author-basic-details">
                     <div class="author-image">
                         <img [src]="author.image" alt="author image">
@@ -33,15 +36,23 @@
                         <!-- Ends: Star Calculations -->
                     </div>
                 </div><br/><br/>
-                <div class="author-brief-description" [innerHTML]="author.brief_intro"></div>
-            </div>
-        </ng-container>
+                <!-- Ends: Author Basic Details -->
 
+                <!-- Starts: Author Brief Intro -->
+                <div class="author-brief-description" [innerHTML]="author.brief_intro"></div>
+                <!-- Ends: Author Brief Intro -->
+            </div>
+            <!-- Ends: Author -->
+        </ng-container>
+        <!-- Ends: If Author Exits -->
+
+        <!-- Starts: If Author Doesn't Exits -->
         <ng-container *ngIf="!isAuthorFound">
             <div class="author-not-found">
                 Author Not Found!
             </div>
         </ng-container>
+        <!-- Ends: If Author Doesn't Exits -->
     </div>
 </ng-container>
 <!-- Ends: Catalog Page -->

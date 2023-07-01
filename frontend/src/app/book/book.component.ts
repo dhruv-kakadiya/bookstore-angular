@@ -30,18 +30,24 @@ export class BookComponent implements OnInit {
         this.serviceAdapter.initializeData();
     }
 
+    // Starts: Return the floor value
     getFloorValue(n: number): number {
         return Math.floor(n);
     }
+    // Ends: Return the floor value
 
+    // Starts: Check if a number is type of float or not
     isFloat(n: number): boolean {
         return (Number(n) === n && n % 1 !== 0);
     }
+    // Starts: Check if a number is type of float or not
 
+    // Starts: Add Book in Cart
     addToCart(): void {
         this.book.inCart = true;
         let cartItemList: number[] = localStorage.getItem('bookStore_cart_item_list') ? JSON.parse(localStorage.getItem('bookStore_cart_item_list') as string) : [];
         cartItemList.push(this.book.id);
         localStorage.setItem('bookStore_cart_item_list', JSON.stringify(cartItemList));
     }
+    // Ends: Add Book in Cart
 }

@@ -1,13 +1,16 @@
+/* Starts: Catalog Page */
 .catalog {
     padding: 1rem 10rem;
     padding-bottom: 3rem;
 }
 
+    /* Starts: Catalog Title */
 .catalog-title {
     font-size: 3rem;
     font-weight: bold;
 }
 
+    /* Starts: Book */
 .books {
     display: grid;
     row-gap: 3rem;
@@ -43,6 +46,7 @@
     margin-right: 0.3rem;
 }
 
+    /* Starts: Add To Cart Button */
 .add-to-cart-button {
     background-color: #DA6365;
     color: #FFFFFF;
@@ -51,3 +55,4 @@
     padding: 0.5rem 2rem;
     border-radius: 0.2rem;
 }
+/* Ends: Catalog Page */

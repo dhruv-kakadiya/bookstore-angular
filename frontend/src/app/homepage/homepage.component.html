@@ -83,6 +83,7 @@
                     <div class="children-books-right-books">
                         <ng-container *ngFor="let book of childrenBookList; let i = index">
                             <ng-container *ngIf="i > 0">
+                                <!-- Starts: Book -->
                                 <div class="children-books-right-book">
                                     <div class="children-books-right-book-image" (click)="navigateToBook(book)">
                                         <img [src]="book.image" alt="book-icon">
@@ -99,6 +100,7 @@
                                     </div>
                                     <!-- Ends: Star Calculations -->
                                 </div>
+                                <!-- Ends: Book -->
                             </ng-container>
                         </ng-container>
                     </div>

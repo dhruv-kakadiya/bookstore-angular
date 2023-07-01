@@ -15,7 +15,7 @@ export class HomepageServiceAdapter {
         this.vm = vm;
     }
 
-    /* Initialize Data */
+    /* Starts: Initialize Data */
     async initializeData() {
         this.vm.isLoading = true;
         let apiString =  DJANGO_SERVER + "/api/category/get_all_categories/";

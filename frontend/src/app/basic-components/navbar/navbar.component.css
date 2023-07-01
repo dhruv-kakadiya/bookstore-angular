@@ -7,6 +7,7 @@
     padding-top: 1rem;
 }
 
+    /* Starts: Left Column */
 .search-navbar-left-column {
     flex-basis: 50%;
     display: flex;
@@ -24,7 +25,9 @@
 .search-navbar-left-column-icon {
     cursor: pointer;
 }
+    /* Ends: Left Column */
 
+    /* Starts: Right Column */
 .search-navbar-right-column {
     flex-basis: 40%;
     display: flex;

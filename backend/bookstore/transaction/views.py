@@ -2,12 +2,13 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 import razorpay
+from decouple import config
 
 from .models import Transaction
 
 
-razpay_key = 'rzp_test_oGEl7xFT79Jw9i'
-razpay_secret = '0ojs07kU2AR0JSjyLZkCBe6q'
+razpay_key = config('razpay_key')
+razpay_secret = config('razpay_secret')
 razorpay_client = razorpay.Client(auth = (razpay_key, razpay_secret))
 
 
