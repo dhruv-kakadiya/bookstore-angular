@@ -137,6 +137,7 @@ img {
 
 .children-books-right-book-image {
     cursor: pointer;
+    max-width: 200px;
 }
 
 .children-books-right-book-image img {
@@ -183,6 +184,7 @@ img {
 .top-book-image {
     flex-basis: 40%;
     cursor: pointer;
+    max-width: 150px;
 }
 
 .top-book-image img {
@@ -227,6 +229,7 @@ img {
 
 .top-author-image {
     flex-basis: 20%;
+    max-width: 200px;
 }
 
 .top-author-image img {
