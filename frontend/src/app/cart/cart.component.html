@@ -42,7 +42,7 @@
 
                 <ng-container *ngFor="let book of bookList; let i = index">
                     <div class="cart-summary-item">
-                        <div class="cart-summary-item-name">{{ book.title }}</div>
+                        <div class="cart-summary-item-name">{{i + 1}} - {{ book.title }}</div>
                         <div class="cart-summary-item-price">{{ book.quantity * book.price }}₹</div>
                     </div>
                 </ng-container>
@@ -52,7 +52,7 @@
                     <div class="cart-summary-item-price fw-bold">{{ totalPrice() }}₹</div>
                 </div><br/><br/>
 
-                <button type="button" class="cart-summary-button">
+                <button type="button" class="cart-summary-button" (click)="createRzpayOrder()">
                     Checkout
                 </button>
             </div>

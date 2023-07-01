@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "author",
     "category",
     "book",
+    "transaction",
 ]
 
 MIDDLEWARE = [

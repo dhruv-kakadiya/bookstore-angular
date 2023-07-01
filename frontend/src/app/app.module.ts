@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { HomepageModule } from './homepage/homepage.module';
 import { CatalogModule } from './catalog/catalog.module';
-import { CartModule } from './cart/catalog.module';
+import { CartModule } from './cart/cart.module';
 
 
 @NgModule({
