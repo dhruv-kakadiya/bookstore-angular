@@ -55,6 +55,7 @@ export class CatalogServiceAdapter {
                 this.vm.bookList = value[0];
                 for (let bookI = 0; bookI < this.vm.bookList.length; bookI++) {
                     this.vm.bookList[bookI].image = DJANGO_SERVER + this.vm.bookList[bookI].image;
+                    this.vm.bookList[bookI].inCart = false;
                 }
             },
             (error) => {

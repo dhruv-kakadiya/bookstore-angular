@@ -10,7 +10,7 @@
 
 .books {
     display: grid;
-    row-gap: 2rem;
+    row-gap: 3rem;
     column-gap: 3rem;
     grid-template-columns: auto auto auto auto;
 }
@@ -43,4 +43,13 @@
 
 .fa-star {
     margin-right: 0.3rem;
+}
+
+.add-to-cart-button {
+    background-color: #DA6365;
+    color: #FFFFFF;
+    border: none;
+    outline: none;
+    padding: 0.5rem 2rem;
+    border-radius: 0.2rem;
 }
