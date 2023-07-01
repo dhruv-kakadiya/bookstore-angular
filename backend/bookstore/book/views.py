@@ -37,6 +37,18 @@ class SearchedBookView(APIView):
                 elif key == "word":
                     query |= Q(title__icontains = value)
                     query |= Q(bookauthor__author__name__icontains = value)
+                elif key == "minPrice":
+                    value = int(value)
+                    query &= Q(price__gte = value)
+                elif key == "maxPrice":
+                    value = int(value)
+                    query &= Q(price__lte = value)
+                elif key == "minDate":
+                    value = int(value)
+                    query &= Q(releaseDate__gte = value)
+                elif key == "maxDate":
+                    value = int(value)
+                    query &= Q(releaseDate__lte = value)
                 elif key == "count":
                     count = int(value)
         books = Book.objects.filter(query).order_by('-star')

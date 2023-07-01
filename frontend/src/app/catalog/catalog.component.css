@@ -18,6 +18,7 @@
 .book-image {
     flex-basis: 40%;
     cursor: pointer;
+    max-width: 200px;
 }
 
 .book-image img {

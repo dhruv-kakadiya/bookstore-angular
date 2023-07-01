@@ -30,6 +30,7 @@ img {
 
 .book-image {
     flex-basis: 20%;
+    max-width: 150px;
 }
 
 .book-details {

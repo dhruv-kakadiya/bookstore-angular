@@ -27,7 +27,25 @@
         <button type="button" class="search-bar-button" (click)="search()">
             <div class="fa fa-search"></div>
         </button>
-    </div><br/><br/><br/><br/>
+    </div><br/>
+    <div class="search-bar">
+        <div class="">
+            <div class="search-heading-subtitle">Min Price</div>
+            <input type="number" class="search-bar-input" style="width: 100px; padding: 1rem;" id="min-price" name="min-price" placeholder="min price" [(ngModel)]="minPrice">
+        </div>
+        <div class="">
+            <div class="search-heading-subtitle">Max Price</div>
+            <input type="number" class="search-bar-input" style="width: 100px; padding: 1rem;" id="max-price" name="max-price" placeholder="max price" [(ngModel)]="maxPrice">
+        </div>
+        <div class="">
+            <div class="search-heading-subtitle">Min Date</div>
+            <input type="date" class="search-bar-input" style="width: 200px; padding: 1rem;" id="min-date" name="min-date" placeholder="min date" [(ngModel)]="minDate">
+        </div>
+        <div class="">
+            <div class="search-heading-subtitle">Max Date</div>
+            <input type="date" class="search-bar-input" style="width: 200px; padding: 1rem;" id="max-date" name="max-date" placeholder="max date" [(ngModel)]="maxDate">
+        </div>
+    </div><br/><br/><br/>
     <!-- Ends: Search Bar -->
 
     <div class="d-flex justify-content-center">
