@@ -15,6 +15,12 @@ export class SearchBarComponent implements OnInit {
     category: string = this.categoryDefault;
     @Input() categoryList: Category[] = [];
 
+    minPrice: number = 0;
+    maxPrice: number = 0;
+
+    minDate: string = "";
+    maxDate: string = "";
+
     constructor(
         private router: Router,
     ) { }
@@ -50,6 +56,10 @@ export class SearchBarComponent implements OnInit {
         let queryParams = {
             word: "",
             category: "",
+            minPrice: 0,
+            maxPrice: 0,
+            minDate: "",
+            maxDate: ""
         };
         let searchParametersProvides: boolean = false;
 
@@ -60,6 +70,22 @@ export class SearchBarComponent implements OnInit {
         if (this.category != this.categoryDefault) {
             searchParametersProvides = true;
             queryParams.category = this.category.toLowerCase();
+        }
+        if (this.minPrice) {
+            searchParametersProvides = true;
+            queryParams.minPrice = this.minPrice;
+        }
+        if (this.maxPrice) {
+            searchParametersProvides = true;
+            queryParams.maxPrice = this.maxPrice;
+        }
+        if (this.minDate) {
+            searchParametersProvides = true;
+            queryParams.minDate = this.minDate;
+        }
+        if (this.maxDate) {
+            searchParametersProvides = true;
+            queryParams.maxDate = this.maxDate;
         }
 
         if (searchParametersProvides) {
