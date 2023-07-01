@@ -18,48 +18,40 @@ export class CartComponent implements OnInit {
     bookList: any = [
         {
             brief_intro: "Hello",
-            id: 1,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            id: 0,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
             price: 500,
             releaseDate: "2022-04-11",
             short_intro: "Fantasy/Adventure",
             star: 5,
+            inCart: false,
             quantity: 1,
             title: "Harry Potter and the Philosopher's stone"
         },
         {
             brief_intro: "Hello",
             id: 1,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
             price: 500,
             releaseDate: "2022-04-11",
             short_intro: "Fantasy/Adventure",
             star: 5,
+            inCart: false,
             quantity: 1,
             title: "Harry Potter and the Philosopher's stone"
         },
         {
             brief_intro: "Hello",
-            id: 1,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            id: 2,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
             price: 500,
             releaseDate: "2022-04-11",
             short_intro: "Fantasy/Adventure",
             star: 5,
+            inCart: false,
             quantity: 1,
             title: "Harry Potter and the Philosopher's stone"
-        },
-        {
-            brief_intro: "Hello",
-            id: 1,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
-            price: 500,
-            releaseDate: "2022-04-11",
-            short_intro: "Fantasy/Adventure",
-            star: 5,
-            quantity: 1,
-            title: "Harry Potter and the Philosopher's stone"
-        },
+        }
     ];
 
     serviceAdapter: any;
