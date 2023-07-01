@@ -2,6 +2,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.db.models import Q
+import json
 
 from .models import Book
 from .serializers import BookSerializer
@@ -29,4 +30,12 @@ class BookView(APIView):
         books = Book.objects.filter(query).order_by('-star')
         if count:
             books = books[:count]
+        return Response(BookSerializer(books, many = True).data, status = status.HTTP_200_OK)
+
+
+class CartBookView(APIView):
+    def get(self, request, pk = None, *args, **kwargs):
+        [key, value] = kwargs["param"].split("=")
+        value = json.loads(value)
+        books = Book.objects.filter(id__in = value)
         return Response(BookSerializer(books, many = True).data, status = status.HTTP_200_OK)

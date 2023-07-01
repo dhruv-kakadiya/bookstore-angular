@@ -44,7 +44,18 @@
                                 </ng-container>
                             </div>
                             <!-- Ends: Star Calculations -->
-                        </div>
+                        </div><br/>
+
+                        <ng-container *ngIf="!book.inCart">
+                            <button type="button" class="add-to-cart-button" (click)="addToCart(i)">
+                                Add to Cart
+                            </button>
+                        </ng-container>
+                        <ng-container *ngIf="book.inCart">
+                            <button type="button" class="add-to-cart-button">
+                                In Cart
+                            </button>
+                        </ng-container>
                     </div>
                     <!-- Ends: Book -->
                 </ng-container>

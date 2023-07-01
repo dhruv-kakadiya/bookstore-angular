@@ -13,8 +13,8 @@ import { Book } from '../common-classes/book';
 export class CatalogComponent implements OnInit {
 
     isLoading: boolean = false;
-    
-    bookList: Book[] = [];
+
+    bookList: any;
 
     serviceAdapter: any;
 
@@ -36,5 +36,12 @@ export class CatalogComponent implements OnInit {
 
     isFloat(n: number): boolean {
         return (Number(n) === n && n % 1 !== 0);
+    }
+
+    addToCart(index: number): void {
+        this.bookList[index].inCart = true;
+        let cartItemList: number[] = localStorage.getItem('bookStore_cart_item_list') ? JSON.parse(localStorage.getItem('bookStore_cart_item_list') as string) : [];
+        cartItemList.push(this.bookList[index].id);
+        localStorage.setItem('bookStore_cart_item_list', JSON.stringify(cartItemList));
     }
 }

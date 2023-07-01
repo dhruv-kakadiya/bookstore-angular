@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { HomepageModule } from './homepage/homepage.module';
 import { CatalogModule } from './catalog/catalog.module';
+import { CartModule } from './cart/cart.module';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { CatalogModule } from './catalog/catalog.module';
         
         HomepageModule,
         CatalogModule,
+        CartModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
