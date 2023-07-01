@@ -1,0 +1,47 @@
+<!-- Starts: Loader -->
+<ng-container *ngIf="isLoading">
+    <app-loader></app-loader>
+</ng-container>
+<!-- Ends: Loader -->
+
+<!-- Starts: Catalog Page -->
+<ng-container *ngIf="!isLoading">
+    <div class="author-page">
+        <!-- Starts: Navbar -->
+        <app-navbar></app-navbar>
+        <!-- Ends: Navbar -->
+
+        <ng-container *ngIf="isAuthorFound">
+            <div class="author">
+                <div class="author-basic-details">
+                    <div class="author-image">
+                        <img [src]="author.image" alt="author image">
+                    </div>
+                    <div class="author-description">
+                        <div class="author-title">{{ author.name }}</div>
+                        <div class="author-subtitle my-2">{{ author.short_intro }}</div>
+                        <div class="author-subtitle my-2"><b>Birth Date: </b> {{ author.dob | date: 'mediumDate' }}</div>
+                        <!-- Starts: Star Calculations -->
+                        <div class="author-description-star my-2">
+                            <ng-container *ngFor="let star of [].constructor(getFloorValue(author.star))">
+                                <div class='fa fa-star'></div>
+                            </ng-container>
+                            <ng-container *ngIf="isFloat(author.star)">
+                                <div class='fa fa-star-half-o'></div>
+                            </ng-container>
+                        </div>
+                        <!-- Ends: Star Calculations -->
+                    </div>
+                </div><br/><br/>
+                <div class="author-brief-description" [innerHTML]="author.brief_intro"></div>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="!isAuthorFound">
+            <div class="author-not-found">
+                Author Not Found!
+            </div>
+        </ng-container>
+    </div>
+</ng-container>
+<!-- Ends: Catalog Page -->

@@ -229,4 +229,8 @@ export class HomepageComponent implements OnInit {
     navigateToBook(book: any): void {
         window.open(FRONTEND + '/book?id=' + book.id, '_blank');
     }
+
+    navigateToAuthor(author: Author): void {
+        window.open(FRONTEND + '/author?id=' + author.id, '_blank');
+    }
 }
