@@ -20,3 +20,12 @@ P.S.: Please add the data before starting the frontend, otherwise some funtional
 2. cd frontend
 3. npm install
 4. npm start
+
+
+
+
+# Features
+1. Catalog
+2. Search
+3. Cart
+4. Payment with Razorpay
