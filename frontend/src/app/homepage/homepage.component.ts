@@ -214,22 +214,27 @@ export class HomepageComponent implements OnInit {
         this.serviceAdapter.initializeData();
     }
 
+    // Starts: Return the floor value
     getFloorValue(n: number): number {
         return Math.floor(n);
     }
 
+    // Starts: Check if a number is type of float or not
     isFloat(n: number): boolean {
         return (Number(n) === n && n % 1 !== 0);
     }
 
+    // Starts: Get Books (By Category)
     getCategoryBooks(category: string): void {
         this.router.navigate(['catalog/'], { queryParams: {category: category} });
     }
 
+    // Starts: Open a Book
     navigateToBook(book: any): void {
         window.open(FRONTEND + '/book?id=' + book.id, '_blank');
     }
 
+    // Starts: Open a Author
     navigateToAuthor(author: Author): void {
         window.open(FRONTEND + '/author?id=' + author.id, '_blank');
     }

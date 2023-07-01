@@ -15,24 +15,26 @@ export class AuthorServiceAdapter {
         this.vm = vm;
     }
 
-    /* Initialize Data */
+    // Starst: Initialize Data
     async initializeData() {
         this.vm.isLoading = true;
-
         let authorId = -1;
 
+        // Start: Get Author ID
         this.vm.route.queryParamMap.subscribe((params: any) => {
             if (params.hasOwnProperty('params') && params.params.hasOwnProperty('id')) {
                 authorId = params.params.id;
             }
         });
 
+        // Starts: If Author Id is not provided - redirect to home-page
         if (authorId == -1) {
             this.vm.router.navigate(['/']);
             this.vm.isLoading = false;
             return;
         }
 
+        // Starts: API Call
         let apiString = DJANGO_SERVER + "/api/author/author/" + authorId;
         const getAuthor = this.http.get(apiString).toPromise();
 
@@ -52,4 +54,5 @@ export class AuthorServiceAdapter {
         );
         this.vm.isLoading = false;
     }
+    // Ends: initializeData()
 }

@@ -23,7 +23,7 @@ export class CartServiceAdapter {
         this.vm = vm;
     }
 
-    /* Initialize Data */
+    // Starts: Initialize Data
     async initializeData() {
         this.vm.isLoading = true;
         let cartItemList: number[] = localStorage.getItem('bookStore_cart_item_list') ? JSON.parse(localStorage.getItem('bookStore_cart_item_list') as string) : [];
@@ -48,6 +48,7 @@ export class CartServiceAdapter {
         this.vm.isLoading = false;
     }
 
+    // Starts: Get Transaction Order
     async getOrderId() {
         this.vm.isLoading = true;
         let apiString = DJANGO_SERVER + "/api/transaction/create_transaction/";
@@ -72,6 +73,7 @@ export class CartServiceAdapter {
         this.vm.isLoading = false;
     }
 
+    // Starts: Verify Transaction
     async verifyTransaction(response: any) {
         this.vm.isLoading = true;
         let apiString = DJANGO_SERVER + "/api/transaction/verify_txn/";
@@ -90,6 +92,7 @@ export class CartServiceAdapter {
         this.vm.isLoading = false;
     }
 
+    // Starts: Cancel Transaction
     async cancelTransaction(response: any) {
         this.vm.isLoading = true;
         let apiString = DJANGO_SERVER + "/api/transaction/cancel_txn/";

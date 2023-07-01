@@ -29,11 +29,15 @@ export class AuthorComponent {
         this.serviceAdapter.initializeData();
     }
 
+    // Starts: Returns the floor value of a number
     getFloorValue(n: number): number {
         return Math.floor(n);
     }
+    // Ends: getFloorValue()
 
+    // Starts: Checks a number is of float type or not
     isFloat(n: number): boolean {
         return (Number(n) === n && n % 1 !== 0);
     }
+    // Ends: isFloat()
 }

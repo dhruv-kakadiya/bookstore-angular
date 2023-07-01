@@ -1,14 +1,18 @@
+/* Starts: Cart Page */
 img {
     width: 100%;
     border-radius: 0.3rem;
 }
 
+    /* Starts: Page Title */
 .cart-page-title {
     font-size: 3rem;
     font-weight: bold;
     padding: 1rem 10rem;
 }
+    /* Ends: Page Title */
 
+    /* Starts: Cart */
 .cart {
     padding: 1rem 10rem;
     display: flex;
@@ -16,6 +20,7 @@ img {
     justify-content: space-between;
 }
 
+    /* Starts: Cart Items Listing */
 .cart-items {
     flex-basis: 60%;
 }
@@ -50,7 +55,9 @@ img {
     font-size: 1.1rem;
     font-weight: bold;
 }
+    /* Ends: Cart Items Listing */
 
+    /* Starts: Pricing */
 .cart-summary {
     flex-basis: 30%;
 }
@@ -67,6 +74,7 @@ img {
     margin-bottom: 0.5rem;
 }
 
+    /* Starts: Summary Button */
 .cart-summary-button {
     background-color: #DA6365;
     color: #FFFFFF;
@@ -75,3 +83,4 @@ img {
     padding: 0.5rem 2rem;
     border-radius: 0.2rem;
 }
+/* Ends: Cart Page */

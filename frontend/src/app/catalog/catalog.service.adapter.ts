@@ -16,7 +16,7 @@ export class CatalogServiceAdapter {
         this.vm = vm;
     }
 
-    /* Initialize Data */
+    // Starts: Initialize Data
     async initializeData() {
         this.vm.isLoading = true;
         let apiString =  DJANGO_SERVER + "/api/category/get_all_categories/";
@@ -38,6 +38,7 @@ export class CatalogServiceAdapter {
             }
         );
 
+        // Starts: Get Searched Books
         if (window.location.search) {
             let locationStringList = window.location.search.substr(1);
             apiString =  DJANGO_SERVER + "/api/book/search/" + locationStringList;
@@ -90,5 +91,7 @@ export class CatalogServiceAdapter {
             }
         );
         this.vm.isLoading = false;
+        // Ends: Get Searched Books
     }
+    // Ends: Initialize data
 }

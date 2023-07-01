@@ -75,14 +75,17 @@ export class CartComponent implements OnInit {
         this.serviceAdapter.initializeData();
     }
 
+    // Starts: Increase Quantity
     increaseQuantity(index: number) : void {
         this.bookList[index].quantity += 1;
     }
 
+    // Starts: Decrease Quantity
     decreaseQuantity(index: number) : void {
         this.bookList[index].quantity -= 1;
     }
 
+    // Starts: Returns the total price
     totalPrice(): number {
         let totalPrice: number = 0;
         for (let bookI = 0; bookI < this.bookList.length; bookI++) {
@@ -91,6 +94,7 @@ export class CartComponent implements OnInit {
         return totalPrice;
     }
 
+    // Starts: Create Transaction Order
     createRzpayOrder(): void {
         this.amount = this.totalPrice() * 100;
         this.currency = "INR";
@@ -116,6 +120,8 @@ export class CartComponent implements OnInit {
                 color: '#DA6365'
             }
         };
+
+        // Starts: Verify Transactions
         options.handler = ((response: any, error: any) => {
             options.response = response;
             console.log(response);
@@ -127,6 +133,8 @@ export class CartComponent implements OnInit {
             alert("Your order has been placed.");
             this.router.navigate(['catalog/']);
         });
+
+        // Starts: Cancel Transaction
         options.modal.ondismiss = (() => {
             let data = {
                 order_id: this.orderId

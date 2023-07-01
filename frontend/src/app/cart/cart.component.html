@@ -12,13 +12,18 @@
         <app-navbar></app-navbar>
         <!-- Ends: Navbar -->
 
+        <!-- Starts: Title -->
         <div class="cart-page-title">
             Cart
         </div><br/>
+        <!-- Ends: Title -->
 
+        <!-- Starts: Cart -->
         <div class="cart">
+            <!-- Starts: Cart Items Listing -->
             <div class="cart-items">
                 <ng-container *ngFor="let book of bookList; let i = index">
+                    <!-- Starts: Cart Item -->
                     <div class="cart-item">
                         <div class="book-image">
                             <img [src]="book.image" alt="book icon">
@@ -35,28 +40,40 @@
                             </ng-container>
                         </div>
                     </div>
+                    <!-- Ends: Cart Item -->
                 </ng-container>
             </div>
+            <!-- Ends: Cart Items Listing -->
+            
+            <!-- Starts: Cart Pricing -->
             <div class="cart-summary">
                 <div class="cart-summary-title">Summary</div><br/>
 
                 <ng-container *ngFor="let book of bookList; let i = index">
+                    <!-- Starts: Book & Price -->
                     <div class="cart-summary-item">
                         <div class="cart-summary-item-name">{{i + 1}} - {{ book.title }}</div>
                         <div class="cart-summary-item-price">{{ book.quantity * book.price }}₹</div>
                     </div>
+                    <!-- Ends: Book & Price -->
                 </ng-container>
 
+                <!-- Starts: Total -->
                 <br/><div class="cart-summary-item">
                     <div class="cart-summary-item-name fw-bold">Total</div>
                     <div class="cart-summary-item-price fw-bold">{{ totalPrice() }}₹</div>
                 </div><br/><br/>
+                <!-- Ends: Total -->
 
+                <!-- Starts: Checkout Button -->
                 <button type="button" class="cart-summary-button" (click)="createRzpayOrder()">
                     Checkout
                 </button>
+                <!-- Ends: Checkout Button -->
             </div>
+            <!-- Ends: Cart Pricing -->
         </div>
+        <!-- Ends: Cart -->
     </div>
 </ng-container>
 <!-- Ends: Cart -->

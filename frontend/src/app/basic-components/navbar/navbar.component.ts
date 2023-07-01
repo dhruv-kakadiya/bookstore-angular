@@ -12,11 +12,15 @@ export class NavbarComponent {
         private router: Router,
     ) { }
 
+    // Starts: Navigate to Home
     navigateToHome(): void {
         this.router.navigate(['/']);
     }
+    // Ends: navigateToHome()
 
+    // Starts: Navigate to Cart
     navigateToCart(): void {
         this.router.navigate(['cart/']);
     }
+    // Ends: navigateToCart()
 }

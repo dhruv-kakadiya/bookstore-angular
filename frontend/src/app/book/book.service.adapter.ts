@@ -15,24 +15,26 @@ export class BookServiceAdapter {
         this.vm = vm;
     }
 
-    /* Initialize Data */
+    // Starts: Initialize Data
     async initializeData() {
         this.vm.isLoading = true;
-
         let bookId = -1;
 
+        // Starts: Get book id
         this.vm.route.queryParamMap.subscribe((params: any) => {
             if (params.hasOwnProperty('params') && params.params.hasOwnProperty('id')) {
                 bookId = params.params.id;
             }
         });
 
+        // Starts: If book id is not provided - redirect to catalog page
         if (bookId == -1) {
             this.vm.router.navigate(['catalog/']);
             this.vm.isLoading = false;
             return;
         }
 
+        // Starts: API Call
         let apiString = DJANGO_SERVER + "/api/book/book/" + bookId;
         const getBook = this.http.get(apiString).toPromise();
 
@@ -61,4 +63,5 @@ export class BookServiceAdapter {
         );
         this.vm.isLoading = false;
     }
+    // Ends: Initialize Data
 }
