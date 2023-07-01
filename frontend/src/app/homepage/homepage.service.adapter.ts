@@ -37,8 +37,6 @@ export class HomepageServiceAdapter {
             getChildrenBooks,             // 3
         ]).then(
             (value: any) => {
-                console.log("Response: ", value);
-
                 if (value[0].length) {
                     this.vm.categoryList = value[0];
                     for (let categoryI = 0; categoryI < this.vm.categoryList.length; categoryI++) {

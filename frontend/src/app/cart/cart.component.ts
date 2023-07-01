@@ -116,9 +116,6 @@ export class CartComponent implements OnInit {
         // Starts: Verify Transactions
         options.handler = ((response: any, error: any) => {
             options.response = response;
-            console.log(response);
-            console.log(error);
-            console.log(options);
             response['amount'] = this.amount;
             this.serviceAdapter.verifyTransaction(response);
             localStorage.setItem('bookStore_cart_item_list', JSON.stringify([]));
@@ -132,7 +129,7 @@ export class CartComponent implements OnInit {
                 order_id: this.orderId
             }
             this.serviceAdapter.cancelTransaction(data);
-            console.log('Order cancelled.');
+            alert('Order cancelled.');
         });
         const rzp = new this.serviceAdapter.nativeWindow.Razorpay(options);
         rzp.open();

@@ -34,8 +34,6 @@ export class CartServiceAdapter {
             getCartBooks,               // 0
         ]).then(
             (value: any) => {
-                console.log("Response: ", value);
-
                 if (value[0].length) {
                     this.vm.bookList = value[0];
                     for (let bookI = 0; bookI < this.vm.bookList.length; bookI++) {
@@ -65,7 +63,6 @@ export class CartServiceAdapter {
             postTransaction         // 0
         ]).then(
             (value: any) => {
-                console.log(value);
                 this.vm.orderId = value[0].order_id;
                 this.vm.payWithRazor(value[0].order_id);
             },
@@ -86,7 +83,6 @@ export class CartServiceAdapter {
             verifyTransaction         // 0
         ]).then(
             (value: any) => {
-                console.log(value);
             },
             (error) => {
                 console.log(error);
@@ -105,7 +101,6 @@ export class CartServiceAdapter {
             cancelTransaction         // 0
         ]).then(
             (value: any) => {
-                console.log(value);
             },
             (error) => {
                 console.log(error);

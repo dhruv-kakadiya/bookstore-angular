@@ -52,8 +52,6 @@ export class CatalogServiceAdapter {
             getBooks,             // 0
         ]).then(
             (value: any) => {
-                console.log("Response: ", value);
-
                 let cartItemList: number[] = localStorage.getItem('bookStore_cart_item_list') ? JSON.parse(localStorage.getItem('bookStore_cart_item_list') as string) : [];
                 if (value[0].length) {
                     this.vm.bookList = value[0];
