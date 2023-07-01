@@ -18,31 +18,31 @@ export class HomepageComponent implements OnInit {
     isLoading: boolean = true;
     categoryList: Category[] = [
         {
-            id: 0,
-            icon: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            id: -1,
+            icon: "./../../assets/book-icon.png",
             name: "Biography"
         },
         {
-            id: 1,
-            icon: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            id: -1,
+            icon: "./../../assets/romance-icon.png",
             name: "Romantic"
         },
         {
-            id: 0,
-            icon: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            id: -1,
+            icon: "./../../assets/pigy-bank.png",
             name: "Business"
         },
         {
-            id: 0,
-            icon: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            id: -1,
+            icon: "./../../assets/cookbook-icon.png",
             name: "Cookbooks"
         },
     ];
     topSixBookList: Book[] = [
         {
             brief_intro: "Hello",
-            id: 1,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            id: 0,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
             price: 500,
             releaseDate: "2022-04-11",
             short_intro: "Fantasy/Adventure",
@@ -51,8 +51,8 @@ export class HomepageComponent implements OnInit {
         },
         {
             brief_intro: "Hello",
-            id: 1,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            id: 0,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
             price: 500,
             releaseDate: "2022-04-11",
             short_intro: "Fantasy/Adventure",
@@ -61,8 +61,8 @@ export class HomepageComponent implements OnInit {
         },
         {
             brief_intro: "Hello",
-            id: 1,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            id: 0,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
             price: 500,
             releaseDate: "2022-04-11",
             short_intro: "Fantasy/Adventure",
@@ -71,49 +71,69 @@ export class HomepageComponent implements OnInit {
         },
         {
             brief_intro: "Hello",
-            id: 1,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            id: 0,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
             price: 500,
             releaseDate: "2022-04-11",
             short_intro: "Fantasy/Adventure",
             star: 5,
             title: "Harry Potter and the Philosopher's stone"
         },
+        {
+            brief_intro: "Hello",
+            id: 0,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 0,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            title: "Harry Potter and the Philosopher's stone"
+        }
     ];
     authorList: Author[] = [
         {
             brief_intro: "Hello",
             dob: "2023-05-03",
-            id: 2,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
-            name: "Arundhati Roy Indian author",
-            short_intro: "Indian Author, Most Famous Indian Author",
-            star: 5
+            id: 0,
+            image: "https://www.jkrowling.com/wp-content/uploads/2022/05/J.K.-Rowling-2021-Photography-Debra-Hurford-Brown-scaled.jpg",
+            name: "J. K. Rowling",
+            short_intro: "British author",
+            star: 4.5
         },
         {
             brief_intro: "Hello",
             dob: "2023-05-03",
-            id: 2,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
-            name: "Arundhati Roy Indian author",
-            short_intro: "Indian Author, Most Famous Indian Author",
-            star: 5
+            id: 0,
+            image: "https://www.jkrowling.com/wp-content/uploads/2022/05/J.K.-Rowling-2021-Photography-Debra-Hurford-Brown-scaled.jpg",
+            name: "J. K. Rowling",
+            short_intro: "British author",
+            star: 4.5
         },
         {
             brief_intro: "Hello",
             dob: "2023-05-03",
-            id: 2,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
-            name: "Arundhati Roy Indian author",
-            short_intro: "Indian Author, Most Famous Indian Author",
-            star: 5
-        }
+            id: 0,
+            image: "https://www.jkrowling.com/wp-content/uploads/2022/05/J.K.-Rowling-2021-Photography-Debra-Hurford-Brown-scaled.jpg",
+            name: "J. K. Rowling",
+            short_intro: "British author",
+            star: 4.5
+        },
     ];
     childrenBookList: Book[] = [
         {
             brief_intro: "Hello",
-            id: 1,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            id: 0,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
             price: 500,
             releaseDate: "2022-04-11",
             short_intro: "Fantasy/Adventure",
@@ -122,8 +142,8 @@ export class HomepageComponent implements OnInit {
         },
         {
             brief_intro: "Hello",
-            id: 1,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            id: 0,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
             price: 500,
             releaseDate: "2022-04-11",
             short_intro: "Fantasy/Adventure",
@@ -132,8 +152,8 @@ export class HomepageComponent implements OnInit {
         },
         {
             brief_intro: "Hello",
-            id: 1,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            id: 0,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
             price: 500,
             releaseDate: "2022-04-11",
             short_intro: "Fantasy/Adventure",
@@ -142,17 +162,8 @@ export class HomepageComponent implements OnInit {
         },
         {
             brief_intro: "Hello",
-            id: 1,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
-            price: 500,
-            releaseDate: "2022-04-11",
-            short_intro: "Fantasy/Adventure",
-            star: 5,
-            title: "Harry Potter and the Philosopher's stone"
-        },{
-            brief_intro: "Hello",
-            id: 1,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            id: 0,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
             price: 500,
             releaseDate: "2022-04-11",
             short_intro: "Fantasy/Adventure",
@@ -161,8 +172,8 @@ export class HomepageComponent implements OnInit {
         },
         {
             brief_intro: "Hello",
-            id: 1,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            id: 0,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
             price: 500,
             releaseDate: "2022-04-11",
             short_intro: "Fantasy/Adventure",
@@ -171,34 +182,14 @@ export class HomepageComponent implements OnInit {
         },
         {
             brief_intro: "Hello",
-            id: 1,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
+            id: 0,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
             price: 500,
             releaseDate: "2022-04-11",
             short_intro: "Fantasy/Adventure",
             star: 5,
             title: "Harry Potter and the Philosopher's stone"
-        },
-        {
-            brief_intro: "Hello",
-            id: 1,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
-            price: 500,
-            releaseDate: "2022-04-11",
-            short_intro: "Fantasy/Adventure",
-            star: 5,
-            title: "Harry Potter and the Philosopher's stone"
-        },
-        {
-            brief_intro: "Hello",
-            id: 1,
-            image: "https://cdn0.iconfinder.com/data/icons/good-morning-1/128/read_book_cute_library_study-512.png",
-            price: 500,
-            releaseDate: "2022-04-11",
-            short_intro: "Fantasy/Adventure",
-            star: 5,
-            title: "Harry Potter and the Philosopher's stone"
-        },
+        }
     ];
 
     serviceAdapter: any;

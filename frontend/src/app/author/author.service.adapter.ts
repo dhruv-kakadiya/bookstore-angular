@@ -42,7 +42,6 @@ export class AuthorServiceAdapter {
             getAuthor,               // 0
         ]).then(
             (value: any) => {
-                console.log("Response: ", value);
                 this.vm.isAuthorFound = true;
                 this.vm.author = value[0];
                 this.vm.author.image = DJANGO_SERVER + this.vm.author.image;

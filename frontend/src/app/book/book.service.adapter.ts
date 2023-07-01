@@ -42,7 +42,6 @@ export class BookServiceAdapter {
             getBook,               // 0
         ]).then(
             (value: any) => {
-                console.log("Response: ", value);
                 this.vm.isBookFound = true;
                 this.vm.book = value[0];
                 this.vm.book.image = DJANGO_SERVER + this.vm.book.image;

@@ -14,7 +14,17 @@ export class BookComponent implements OnInit {
     isLoading: boolean = false;
 
     isBookFound: boolean = false;
-    book: any;
+    book: any = {
+        brief_intro: "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aut repellendus nemo est explicabo ipsa, facilis laborum ea saepe, quibusdam provident ut nesciunt quas dignissimos, excepturi expedita non molestiae. Corrupti quibusdam, nihil iusto facilis eius ratione odio labore perferendis facere corporis aliquid temporibus consequuntur cupiditate. Aliquid enim labore saepe quod?Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aut repellendus nemo est explicabo ipsa, facilis laborum ea saepe, quibusdam provident ut nesciunt quas dignissimos, excepturi expedita non molestiae. Corrupti quibusdam, nihil iusto facilis eius ratione odio labore perferendis facere corporis aliquid temporibus consequuntur cupiditate. Aliquid enim labore saepe quod?Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aut repellendus nemo est explicabo ipsa, facilis laborum ea saepe, quibusdam provident ut nesciunt quas dignissimos, excepturi expedita non molestiae. Corrupti quibusdam, nihil iusto facilis eius ratione odio labore perferendis facere corporis aliquid temporibus consequuntur cupiditate. Aliquid enim labore saepe quod?Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aut repellendus nemo est explicabo ipsa, facilis laborum ea saepe, quibusdam provident ut nesciunt quas dignissimos, excepturi expedita non molestiae. Corrupti quibusdam, nihil iusto facilis eius ratione odio labore perferendis facere corporis aliquid temporibus consequuntur cupiditate. Aliquid enim labore saepe quod?Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aut repellendus nemo est explicabo ipsa, facilis laborum ea saepe, quibusdam provident ut nesciunt quas dignissimos, excepturi expedita non molestiae. Corrupti quibusdam, nihil iusto facilis eius ratione odio labore perferendis facere corporis aliquid temporibus consequuntur cupiditate. Aliquid enim labore saepe quod?Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aut repellendus nemo est explicabo ipsa, facilis laborum ea saepe, quibusdam provident ut nesciunt quas dignissimos, excepturi expedita non molestiae. Corrupti quibusdam, nihil iusto facilis eius ratione odio labore perferendis facere corporis aliquid temporibus consequuntur cupiditate. Aliquid enim labore saepe quod?Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aut repellendus nemo est explicabo ipsa, facilis laborum ea saepe, quibusdam provident ut nesciunt quas dignissimos, excepturi expedita non molestiae. Corrupti quibusdam, nihil iusto facilis eius ratione odio labore perferendis facere corporis aliquid temporibus consequuntur cupiditate. Aliquid enim labore saepe quod?Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aut repellendus nemo est explicabo ipsa, facilis laborum ea saepe, quibusdam provident ut nesciunt quas dignissimos, excepturi expedita non molestiae. Corrupti quibusdam, nihil iusto facilis eius ratione odio labore perferendis facere corporis aliquid temporibus consequuntur cupiditate. Aliquid enim labore saepe quod?</p>",
+        id: 0,
+        image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
+        price: 500,
+        releaseDate: "2022-04-11",
+        short_intro: "Fantasy/Adventure",
+        star: 5,
+        inCart: false,
+        title: "Harry Potter and the Philosopher's stone"
+    };
 
     serviceAdapter: any;
 

@@ -19,24 +19,7 @@ export class CatalogServiceAdapter {
     // Starts: Initialize Data
     async initializeData() {
         this.vm.isLoading = true;
-        let apiString =  DJANGO_SERVER + "/api/category/get_all_categories/";
-        const getAllCategories = this.http.get(apiString).toPromise();
-
-        await Promise.all([
-            getAllCategories,             // 0
-        ]).then(
-            (value) => {
-                console.log("Response: ", value);
-
-                this.vm.categoryList = value[0];
-                for (let categoryI = 0; categoryI < this.vm.categoryList.length; categoryI++) {
-                    this.vm.categoryList[categoryI].icon = DJANGO_SERVER + this.vm.categoryList[categoryI].icon;
-                }
-            },
-            (error) => {
-                console.log(error);
-            }
-        );
+        let apiString = "";
 
         // Starts: Get Searched Books
         if (window.location.search) {
@@ -68,20 +51,19 @@ export class CatalogServiceAdapter {
         await Promise.all([
             getBooks,             // 0
         ]).then(
-            (value) => {
-                console.log("Response: ", value);
-
+            (value: any) => {
                 let cartItemList: number[] = localStorage.getItem('bookStore_cart_item_list') ? JSON.parse(localStorage.getItem('bookStore_cart_item_list') as string) : [];
-
-                this.vm.bookList = value[0];
-                for (let bookI = 0; bookI < this.vm.bookList.length; bookI++) {
-                    this.vm.bookList[bookI].image = DJANGO_SERVER + this.vm.bookList[bookI].image;
-                    this.vm.bookList[bookI].inCart = false;
-
-                    for(let cartItemI = 0; cartItemI < cartItemList.length; cartItemI++) {
-                        if (this.vm.bookList[bookI].id == cartItemList[cartItemI]) {
-                            this.vm.bookList[bookI].inCart = true;
-                            break;
+                if (value[0].length) {
+                    this.vm.bookList = value[0];
+                    for (let bookI = 0; bookI < this.vm.bookList.length; bookI++) {
+                        this.vm.bookList[bookI].image = DJANGO_SERVER + this.vm.bookList[bookI].image;
+                        this.vm.bookList[bookI].inCart = false;
+    
+                        for(let cartItemI = 0; cartItemI < cartItemList.length; cartItemI++) {
+                            if (this.vm.bookList[bookI].id == cartItemList[cartItemI]) {
+                                this.vm.bookList[bookI].inCart = true;
+                                break;
+                            }
                         }
                     }
                 }

@@ -64,9 +64,60 @@
 
         <!-- Starts: Book Doesn't Exists -->
         <ng-container *ngIf="!isBookFound">
-            <div class="book-not-found">
+            <!-- <div class="book-not-found">
                 Book Not Found!
+            </div><br/><br/><br/> -->
+
+            <div class="book-not-found">
+                Dummy Data:
             </div>
+
+            <!-- Starts: Book -->
+            <div class="book">
+                <!-- Starts: Book Basic Details -->
+                <div class="book-basic-details">
+                    <div class="book-image">
+                        <img [src]="book.image" alt="book icon">
+                    </div>
+                    <div class="book-description">
+                        <div class="book-title">{{ book.title }}</div>
+                        <div class="book-subtitle my-2">{{ book.short_intro }}</div>
+                        <!-- Starts: Star Calculations -->
+                        <div class="book-description-star my-2">
+                            <ng-container *ngFor="let star of [].constructor(getFloorValue(book.star))">
+                                <div class='fa fa-star'></div>
+                            </ng-container>
+                            <ng-container *ngIf="isFloat(book.star)">
+                                <div class='fa fa-star-half-o'></div>
+                            </ng-container>
+                        </div>
+                        <!-- Ends: Star Calculations -->
+                        <div class="book-price">{{ book.price }} ₹</div><br/><br/>
+
+                        <!-- Starts: Add to Cart Button -->
+                        <ng-container *ngIf="!book.inCart">
+                            <button type="button" class="add-to-cart-button" (click)="addToCart()">
+                                Add to Cart
+                            </button>
+                        </ng-container>
+                        <!-- Ends: Add to Cart Button -->
+                        
+                        <!-- Starts: In Cart Button -->
+                        <ng-container *ngIf="book.inCart">
+                            <button type="button" class="add-to-cart-button">
+                                In Cart
+                            </button>
+                        </ng-container>
+                        <!-- Ends: In Cart Button -->
+                    </div>
+                </div><br/><br/>
+                <!-- Ends: Book Basic Details -->
+
+                <!-- Starts: Book Brief Intro -->
+                <div class="book-brief-description" [innerHTML]="book.brief_intro"></div>
+                <!-- Ends: Book Brief Intro -->
+            </div>
+            <!-- Ends: Book -->
         </ng-container>
         <!-- Ends: Book Doesn't Exists -->
     </div>

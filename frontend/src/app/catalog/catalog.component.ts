@@ -15,7 +15,74 @@ export class CatalogComponent implements OnInit {
 
     isLoading: boolean = false;
 
-    bookList: any = [];
+    bookList: any = [
+        {
+            brief_intro: "Hello",
+            id: 0,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            inCart: false,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 1,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            inCart: false,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 2,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            inCart: false,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 3,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            inCart: false,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 4,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            inCart: false,
+            title: "Harry Potter and the Philosopher's stone"
+        },
+        {
+            brief_intro: "Hello",
+            id: 5,
+            image: "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg",
+            price: 500,
+            releaseDate: "2022-04-11",
+            short_intro: "Fantasy/Adventure",
+            star: 5,
+            inCart: false,
+            title: "Harry Potter and the Philosopher's stone"
+        }
+    ];
 
     serviceAdapter: any;
 
