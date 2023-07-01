@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { HomepageModule } from './homepage/homepage.module';
 import { CatalogModule } from './catalog/catalog.module';
 import { CartModule } from './cart/cart.module';
+import { BookModule } from './book/book.module';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { CartModule } from './cart/cart.module';
         HomepageModule,
         CatalogModule,
         CartModule,
+        BookModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -1,0 +1,50 @@
+.book {
+    padding: 1rem 10rem;
+}
+
+.book-basic-details {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.book-image {
+    flex-basis: 30%;
+}
+
+img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.book-description {
+    flex-basis: 60%;
+}
+
+.book-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.fa-star {
+    margin-right: 0.3rem;
+}
+
+.book-price {
+    font-weight: bold;
+}
+
+.book-not-found {
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 1rem 10rem;
+}
+
+.add-to-cart-button {
+    background-color: #DA6365;
+    color: #FFFFFF;
+    border: none;
+    outline: none;
+    padding: 0.5rem 2rem;
+    border-radius: 0.2rem;
+}
