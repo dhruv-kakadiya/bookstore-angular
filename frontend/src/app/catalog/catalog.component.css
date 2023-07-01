@@ -15,9 +15,9 @@
     grid-template-columns: auto auto auto auto;
 }
 
-.book {
+/* .book {
     cursor: pointer;
-}
+} */
 
 .book-image {
     flex-basis: 40%;
@@ -26,6 +26,7 @@
 .book-image img {
     border-radius: 0.3rem;
     width: 100%;
+    cursor: pointer;
 }
 
 .book-description {

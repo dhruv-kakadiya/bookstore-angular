@@ -3,6 +3,7 @@ import { CatalogServiceAdapter } from './catalog.service.adapter';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from '../common-classes/book';
+import { FRONTEND } from '../environment/environment';
 
 
 @Component({
@@ -43,5 +44,9 @@ export class CatalogComponent implements OnInit {
         let cartItemList: number[] = localStorage.getItem('bookStore_cart_item_list') ? JSON.parse(localStorage.getItem('bookStore_cart_item_list') as string) : [];
         cartItemList.push(this.bookList[index].id);
         localStorage.setItem('bookStore_cart_item_list', JSON.stringify(cartItemList));
+    }
+
+    navigateToBook(index: number): void {
+        window.open(FRONTEND + '/book?id=' + this.bookList[index].id, '_blank');
     }
 }
