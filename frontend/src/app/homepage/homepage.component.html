@@ -51,7 +51,7 @@
             <div class="children-books">
                 <!-- Starts: Books Section - Left Column -->
                 <div class="children-books-left">
-                    <div class="children-books-left-book">
+                    <div class="children-books-left-book" (click)="navigateToBook(childrenBookList[0])">
                         <div class="children-books-left-book-image">
                             <img [src]="childrenBookList[0].image" alt="book-icon">
                         </div>
@@ -84,7 +84,7 @@
                         <ng-container *ngFor="let book of childrenBookList; let i = index">
                             <ng-container *ngIf="i > 0">
                                 <div class="children-books-right-book">
-                                    <div class="children-books-right-book-image">
+                                    <div class="children-books-right-book-image" (click)="navigateToBook(book)">
                                         <img [src]="book.image" alt="book-icon">
                                     </div>
                                     <div class="children-books-right-book-title">{{ book.title }}</div>
@@ -124,7 +124,7 @@
                     <ng-container *ngFor="let book of topSixBookList; let i = index">
                         <!-- Starts: Book -->
                         <div class="top-book">
-                            <div class="top-book-image">
+                            <div class="top-book-image" (click)="navigateToBook(book)">
                                 <img [src]="book.image" alt="book-icon">
                             </div>
                             <div class="top-book-description">

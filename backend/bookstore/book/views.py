@@ -11,6 +11,18 @@ from .serializers import BookSerializer
 # Create your views here.
 class BookView(APIView):
     def get(self, request, pk = None, *args, **kwargs):
+        if pk != None:
+            book = Book.objects.filter(id = pk)
+            if len(book) > 0:
+                book = book[0]
+                return Response(BookSerializer(book).data, status = status.HTTP_200_OK)
+            return Response({'error': 'Book Not Found.'}, status = status.HTTP_404_NOT_FOUND)
+        books = Book.objects.all()
+        return Response(BookSerializer(books, many = True).data, status = status.HTTP_200_OK)
+
+
+class SearchedBookView(APIView):
+    def get(self, request, pk = None, *args, **kwargs):
         request_data = []
         if "param" in kwargs:
             request_data = kwargs["param"].split("&")

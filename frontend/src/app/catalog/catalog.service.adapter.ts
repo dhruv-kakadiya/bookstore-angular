@@ -39,8 +39,26 @@ export class CatalogServiceAdapter {
         );
 
         if (window.location.search) {
-            console.log(window.location.search);
-            apiString =  DJANGO_SERVER + "/api/book/search/" + window.location.search.substr(1);
+            let locationStringList = window.location.search.substr(1);
+            apiString =  DJANGO_SERVER + "/api/book/search/" + locationStringList;
+            // let queryString = "";
+
+            // locationStringList.forEach((item, index)=>{
+            //     let [key, value] = item.split("=");
+            //     value = value.trim();
+            //     console.log(key, value);
+            //     if (value) {
+            //         if (key == "word") {
+            //             queryString += ("title__icontains=" + value);
+            //             queryString += ("bookauthor__author__name__icontains=" + value);
+            //         } else if (key == "category") {
+            //             queryString += ("bookcategory__category__name__iexact=" + value);
+            //         } else if (key == "count") {
+            //             queryString += ("count=" + value);
+            //         }
+            //     }
+            // })
+            // apiString =  DJANGO_SERVER + "/api/book/search/" + queryString;
         } else {
             apiString =  DJANGO_SERVER + "/api/book/search/";
         }

@@ -24,7 +24,7 @@
                 <ng-container *ngFor="let book of bookList; let i = index">
                     <!-- Starts: Book -->
                     <div class="book">
-                        <div class="book-image">
+                        <div class="book-image" (click)="navigateToBook(i)">
                             <img [src]="book.image" alt="book-icon">
                         </div>
                         <div class="book-description">

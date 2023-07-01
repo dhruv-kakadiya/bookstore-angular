@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Category } from '../common-classes/category';
 import { Book } from '../common-classes/book';
 import { Author } from '../common-classes/author';
+import { FRONTEND } from '../environment/environment';
 
 
 @Component({
@@ -223,5 +224,9 @@ export class HomepageComponent implements OnInit {
 
     getCategoryBooks(category: string): void {
         this.router.navigate(['catalog/'], { queryParams: {category: category} });
+    }
+
+    navigateToBook(book: any): void {
+        window.open(FRONTEND + '/book?id=' + book.id, '_blank');
     }
 }
